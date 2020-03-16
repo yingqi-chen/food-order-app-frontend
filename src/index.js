@@ -9,7 +9,9 @@ import {thunk} from 'redux-thunk'
 let store = createStore(reducer, applyMiddleware(thunk))
 
 ReactDOM.render(
-    <App />, 
+<Provider store={store}>
+    <App />
+</Provider>,
     document.getElementById('root')
 );
 
