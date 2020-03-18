@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import RestaurantContainer from './containers/restaurantContainer';
+import UserContainer from './containers/userContainer.js'
 
 class App extends React.Component {
   
@@ -8,7 +9,8 @@ class App extends React.Component {
   return (
     <div>
       <RestaurantContainer />
-      {/* <OrderContainer /> */}
+      {/* <LoginForm /> */}
+      <UserContainer />
       {/* <FavoritesContainer />
       <Footer> */}
     </div>
