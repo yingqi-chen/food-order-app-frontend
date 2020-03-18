@@ -1,6 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {authenticateUser} from '../actions/userAction'
+
 
 class LoginForm extends React.Component{
     
@@ -16,11 +15,20 @@ class LoginForm extends React.Component{
        })
     }
 
-    handleSubmit = (e) =>{
-       e.preventDefault;
-       this.props.authenticateUser(this.state)
-    }
-
+    handleSubmit = event => {
+        event.preventDefault();
+        fetch('http://localhost:3001/login', {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.state)
+        })
+        this.setState({
+            email:"",
+            password: ""
+        })
+      }
 
 
     render(){
@@ -49,12 +57,7 @@ class LoginForm extends React.Component{
 }
 
 
-const mapDispatchToProps = dispatch => {
-    return {
-      authenticateUser: (userInfo) => dispatch(authenticateUser(userInfo))
-    }
-  }
 
-export default connect(null, mapDispatchToProps)(LoginForm)
+export default LoginForm
 
  

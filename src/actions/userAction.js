@@ -1,4 +1,6 @@
-const authenticateUser = (userinfo) =>{
+
+
+function authenticateUser (userinfo){
     return {
         type: "AUTHENTICATION",
         payload: userinfo
@@ -9,4 +11,4 @@ const authenticateUser = (userinfo) =>{
 
 
 
-export default {authenticateUser}
+export default authenticateUser
