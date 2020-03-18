@@ -18,7 +18,7 @@ class LoginForm extends React.Component{
 
     handleSubmit = (e) =>{
        e.preventDefault;
-       this.props.authenticateUser()
+       this.props.authenticateUser(this.state)
     }
 
 
@@ -51,7 +51,7 @@ class LoginForm extends React.Component{
 
 const mapDispatchToProps = dispatch => {
     return {
-      authenticateUser: () => dispatch(authenticateUser())
+      authenticateUser: (userInfo) => dispatch(authenticateUser(userInfo))
     }
   }
 
