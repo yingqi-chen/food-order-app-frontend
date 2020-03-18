@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 class LoginForm extends React.Component{
     
@@ -46,6 +47,13 @@ class LoginForm extends React.Component{
     }
 }
 
-export default LoginForm
+
+const mapDispatchToProps = dispatch => {
+    return {
+      authenticateUser: () => dispatch(authenticateUser())
+    }
+  }
+
+export default connect(null, mapDispatchToProps)(LoginForm)
 
  
