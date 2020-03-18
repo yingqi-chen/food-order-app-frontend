@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {authenticateUser} from '../actions/userAction'
 
 class LoginForm extends React.Component{
     
