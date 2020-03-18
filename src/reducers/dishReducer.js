@@ -1,8 +1,17 @@
-const dishReducer = (state={dish:[]},action) =>{
+const dishReducer = (state={dish:[], loading: "not yet"},action) =>{
+
     switch(action.type){
         case "LOADING_DISH":
-          console.log("fetching dishes...")
-          return state
+          return {
+            ...state,
+            loading: "still loading..."
+          }
+
+        case "ADD_DISH":
+          return {
+            ...state,
+            dishes: action.dishes
+          }
         default:
             return state
     }
