@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import fetchDishes from '../actions/dishAction.js'
+import DishDisplayer from '../components/dishDisplayer'
 
 
 
@@ -13,17 +14,17 @@ class RestaurantContainer extends React.Component {
     render(){
     return (
       <div>
-        RestaurantContainer
+        <DishDisplayer dishes={this.props.dishes}/>
       </div>
     );
    }
   }
 
-// const mapStateToProps = state =>{
-//     return {
-//         dishes: state.dishes
-//     }
-// }
+const mapStateToProps = state =>{
+    return {
+        dishes: state.dishes
+    }
+}
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -31,7 +32,7 @@ const mapDispatchToProps = dispatch => {
     }
   }
 
-export default connect(null, mapDispatchToProps)(RestaurantContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantContainer)
 
 
   
