@@ -1,12 +1,16 @@
 import React from 'react';
 import './App.css';
+import RestaurantContainer from './containers/restaurantContainer';
 
 class App extends React.Component {
   
   render(){
   return (
     <div>
-      APP
+      <RestaurantContainer />
+      {/* <OrderContainer /> */}
+      {/* <FavoritesContainer />
+      <Footer> */}
     </div>
   );
  }

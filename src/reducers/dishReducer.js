@@ -1,4 +1,4 @@
-export default dishReducers = (state={dish:[]},action) =>{
+const dishReducer = (state={dish:[]},action) =>{
     switch(action.type){
         case "LOADING_DISH":
           return state
@@ -6,3 +6,5 @@ export default dishReducers = (state={dish:[]},action) =>{
             return state
     }
 }
+
+export default dishReducer
