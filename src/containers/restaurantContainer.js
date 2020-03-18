@@ -1,8 +1,14 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import fetchDishes from '../actions/dishAction.js'
 
 
 
-export default class RestaurantContainer extends React.Component {
+class RestaurantContainer extends React.Component {
+
+    componentDidMount(){
+        this.props.fetchDishes()
+    }
   
     render(){
     return (
@@ -12,5 +18,20 @@ export default class RestaurantContainer extends React.Component {
     );
    }
   }
-  
+
+// const mapStateToProps = state =>{
+//     return {
+//         dishes: state.dishes
+//     }
+// }
+
+const mapDispatchToProps = dispatch => {
+    return {
+      fetchDishes: () => dispatch(fetchDishes())
+    }
+  }
+
+export default connect(null, mapDispatchToProps)(RestaurantContainer)
+
+
   
