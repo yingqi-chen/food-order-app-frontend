@@ -14,8 +14,9 @@ class LoginForm extends React.Component{
        })
     }
 
-    handleSubmit = () =>{
-
+    handleSubmit = (e) =>{
+       e.preventDefault;
+       this.props.authenticateUser()
     }
 
 
@@ -23,7 +24,7 @@ class LoginForm extends React.Component{
     render(){
         return (        
             <div>
-               <form>
+               <form onSubmit = {this.handleSubmit}>
                    <label>Email: </label>
                    <input 
                       name = "email"
