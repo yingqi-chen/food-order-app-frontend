@@ -1,13 +1,15 @@
 import React from 'react'
 import LoginForm from '../components/loginForm'
+import LoggedIn from '../components/loggedin'
+import {connect} from 'react-redux'
 
-export default class UserContainer extends React.Component{
+
+class UserContainer extends React.Component{
     render(){
         return (
           
             <div>
-               <LoginForm />
-               {/* <MyOrder /> */}
+               {this.props.loggedIn ? <LoggedIn user={this.props.user}/> :  <LoginForm />}
             </div>
         )
       
@@ -15,4 +17,12 @@ export default class UserContainer extends React.Component{
     }
 }
 
+const mapStateToProps = state =>{
+    return {
+        user: state.user.user,
+        loggedIn: state.user.login
+    }
+}
 
+
+export default connect(mapStateToProps)(UserContainer)
