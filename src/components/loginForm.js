@@ -69,7 +69,6 @@ class LoginForm extends React.Component{
 }
 
 const mapDispatchToProps = dispatch => {
-     debugger
     return {
       addUser: (userInfo) => dispatch(addUser(userInfo))
     }

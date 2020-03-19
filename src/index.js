@@ -6,10 +6,19 @@ import {createStore, applyMiddleware,compose} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import dishReducer from './reducers/dishReducer.js'
+import userReducer from './reducers/userReducer'
+import {combineReducers} from 'redux'
+
+const rootReducer = combineReducers({
+    dishes: dishReducer,
+    user: userReducer
+  })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-let store = createStore(dishReducer, composeEnhancers(applyMiddleware(thunk)))
+let store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+
+
 
 ReactDOM.render(
 <Provider store={store}>
