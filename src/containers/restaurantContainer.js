@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import fetchDishes from '../actions/dishAction.js'
-import DishDisplayer from '../components/dishDisplayer'
+import ListDisplayer from '../components/ListDisplayer'
 
 
 
@@ -14,7 +14,7 @@ class RestaurantContainer extends React.Component {
     render(){
     return (
       <div>
-        <DishDisplayer dishes={this.props.dishes}/>
+        <ListDisplayer dishes={this.props.dishes}/>
       </div>
     );
    }
