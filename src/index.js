@@ -8,10 +8,13 @@ import thunk from 'redux-thunk';
 import dishReducer from './reducers/dishReducer.js'
 import userReducer from './reducers/userReducer'
 import {combineReducers} from 'redux'
+import loadingReducer from './reducers/loadingReducer';
+
 
 const rootReducer = combineReducers({
     dishes: dishReducer,
-    user: userReducer
+    user: userReducer,
+    loading: loadingReducer
   })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
