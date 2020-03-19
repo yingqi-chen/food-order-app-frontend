@@ -1,4 +1,7 @@
 import React from 'react'
+import {connect} from 'react-redux';
+import addUser from '../actions/userAction'
+
 
 
 class LoginForm extends React.Component{
@@ -24,11 +27,19 @@ class LoginForm extends React.Component{
           },
           body: JSON.stringify(this.state)
         }).then(r=>r.json())
-        .then(j=>console.log(j))
+        .then(j=>this.addUser(j))
         this.setState({
             email:"",
             password: ""
         })
+      }
+
+      addUser = (j)=>{
+          if (j.status==="error" ){
+             alert(j.message)
+          }else{
+              this.props.addUser(j)
+          }
       }
 
 
@@ -57,8 +68,16 @@ class LoginForm extends React.Component{
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+      addUser: (userInfo) => dispatch(addUser(userInfo))
+    }
+  }
+
+export default connect(null, mapDispatchToProps)(LoginForm)
 
 
-export default LoginForm
+
+
 
  

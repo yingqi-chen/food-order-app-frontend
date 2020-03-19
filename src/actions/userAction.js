@@ -1,6 +1,7 @@
 
 
-function authenticateUser (userinfo){
+function addUser (userinfo){
+    debugger;
     return {
         type: "AUTHENTICATION",
         payload: userinfo
@@ -11,4 +12,4 @@ function authenticateUser (userinfo){
 
 
 
-export default authenticateUser
+export default addUser
