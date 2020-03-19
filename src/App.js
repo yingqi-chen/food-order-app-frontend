@@ -9,7 +9,6 @@ class App extends React.Component {
   return (
     <div>
       <RestaurantContainer />
-      {/* <LoginForm /> */}
       <UserContainer />
       {/* <FavoritesContainer />
       <Footer> */}

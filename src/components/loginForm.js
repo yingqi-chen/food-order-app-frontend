@@ -23,7 +23,8 @@ class LoginForm extends React.Component{
             "Content-Type": "application/json",
           },
           body: JSON.stringify(this.state)
-        })
+        }).then(r=>r.json())
+        .then(j=>console.log(j))
         this.setState({
             email:"",
             password: ""
