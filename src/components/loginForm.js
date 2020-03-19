@@ -27,14 +27,14 @@ class LoginForm extends React.Component{
           },
           body: JSON.stringify(this.state)
         }).then(r=>r.json())
-        .then(j=>this.addUser(j))
+        .then(j=>this.authenticateUser(j))
         this.setState({
             email:"",
             password: ""
         })
       }
 
-      addUser = (j)=>{
+      authenticateUser = (j)=>{
           if (j.status==="error" ){
              alert(j.message)
           }else{
@@ -69,6 +69,7 @@ class LoginForm extends React.Component{
 }
 
 const mapDispatchToProps = dispatch => {
+     debugger
     return {
       addUser: (userInfo) => dispatch(addUser(userInfo))
     }

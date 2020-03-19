@@ -1,9 +1,9 @@
 
 
 function addUser (userinfo){
-    debugger;
+    debugger
     return {
-        type: "AUTHENTICATION",
+        type: "AUTHENTICATION_SUCCESS",
         payload: userinfo
     }
 }
