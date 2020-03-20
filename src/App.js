@@ -3,6 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import RestaurantContainer from './containers/restaurantContainer';
 import UserContainer from './containers/userContainer.js'
+import LoginForm from './components/loginForm'
 
 class App extends React.Component {
 
@@ -13,6 +14,7 @@ class App extends React.Component {
       <Router>
        <Switch>
          <Route exact path="/" component={RestaurantContainer} />
+         <Route exact path="/login" component={LoginForm} />
        </Switch>
       </Router>
     </div>
