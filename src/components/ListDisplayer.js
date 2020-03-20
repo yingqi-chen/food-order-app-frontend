@@ -1,12 +1,12 @@
 import React from 'react'
-import Dish from '../components/dish'
+import Dish from './dish'
 
 
-const dishDisplayer = ({dishes}) =>dishes.map((d,index) => <Dish key={index} dish={d}/>)
+const ListDisplayer = ({dishes}) =>dishes.map((d,index) => <Dish key={index} dish={d}/>)
 
     // 
     
 
-export default dishDisplayer
+export default ListDisplayer
 
  

@@ -1,6 +1,13 @@
 import React from 'react'
 
-const Dish = ({dish}) =><div>{dish.name}</div>;
+const Dish = ({dish}) =>{
+    return(
+    <div>
+        {dish.name}
+        <img src={`./images/${dish.image}`} alt={dish.name} />
+    </div>
+    )
+}
 
 // later I would need dish name, dish picture and order button, dish status will decide what the order button said, 
 //no matter it is rendered from within myorder component, menu component or favorite component,  then, you can click the button 
