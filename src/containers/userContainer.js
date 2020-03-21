@@ -2,15 +2,29 @@ import React from 'react'
 import LoginForm from '../components/loginForm'
 import MyProfile from '../components/myprofile'
 import {connect} from 'react-redux'
+import Signup from '../components/Signup'
 
 
 
 class UserContainer extends React.Component{
+    
+    renderProperContent = ()=>{
+        let path = this.props.match.path
+        if (this.props.loggedIn){
+            return  <MyProfile user={this.props.user}/>
+        }else if(path==="/signup"){
+            return <Signup />
+        }else{
+            return <LoginForm />
+        }
+    }
+
+
     render(){
         return (
-            <div>
-               {this.props.loggedIn ? <MyProfile user={this.props.user}/> :  <LoginForm />}
-            </div>
+            <React.Fragment>
+                {this.renderProperContent()}
+            </React.Fragment>
         )
       
         
