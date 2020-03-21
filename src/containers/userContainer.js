@@ -1,15 +1,15 @@
 import React from 'react'
 import LoginForm from '../components/loginForm'
-import LoggedIn from '../components/loggedin'
+import MyProfile from '../components/myprofile'
 import {connect} from 'react-redux'
+
 
 
 class UserContainer extends React.Component{
     render(){
         return (
-          
             <div>
-               {this.props.loggedIn ? <LoggedIn user={this.props.user}/> :  <LoginForm />}
+               {this.props.loggedIn ? <MyProfile user={this.props.user}/> :  <LoginForm />}
             </div>
         )
       

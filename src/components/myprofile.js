@@ -1,7 +1,7 @@
 import React from 'react'
 import ListDisplayer from './ListDisplayer'
 
-class loggedIn extends React.Component{
+class MyProfile extends React.Component{
 
     renderListDisplayer = (lists)=>lists.map((item,index)=><ListDisplayer key={index} dishes={item.dishes}/>)
 
@@ -24,4 +24,4 @@ class loggedIn extends React.Component{
 }
 
 
-export default loggedIn
+export default MyProfile
