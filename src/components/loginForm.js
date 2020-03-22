@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import addUser from '../actions/userAction'
+import {loginUserFetch} from '../actions/userAction'
 
 
 
@@ -20,14 +20,7 @@ class LoginForm extends React.Component{
 
     handleSubmit = event => {
         event.preventDefault();
-        fetch('http://localhost:3001/login', {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(this.state)
-        }).then(r=>r.json())
-        .then(j=>this.authenticateUser(j))
+        this.props.loginUserFetch(this.state)
         this.setState({
             email:"",
             password: ""
@@ -38,7 +31,7 @@ class LoginForm extends React.Component{
           if (j.status==="error" ){
              alert(j.message)
           }else{
-              this.props.addUser(j)
+              this.props.loginUserFetch(j)
           }
       }
 
@@ -70,7 +63,7 @@ class LoginForm extends React.Component{
 
 const mapDispatchToProps = dispatch => {
     return {
-      addUser: (userInfo) => dispatch(addUser(userInfo))
+      loginUserFetch: (userInfo) => dispatch(loginUserFetch(userInfo))
     }
   }
 
