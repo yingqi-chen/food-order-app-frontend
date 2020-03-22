@@ -10,6 +10,7 @@ class App extends React.Component {
   render(){
   return (
     <div>
+      {/* <HeaderJumbo /> */}
       <Router>
        <Switch>
          <Route exact path="/" component={RestaurantContainer} />
@@ -18,6 +19,7 @@ class App extends React.Component {
          <Route exact path="/myprofile" component={UserContainer} />
        </Switch>
       </Router>
+      {/* <Footer /> */}
     </div>
   );
  }

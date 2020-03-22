@@ -4,8 +4,6 @@ import ListDisplayer from './ListDisplayer'
 class MyProfile extends React.Component{
 
     renderListDisplayer = (lists)=>lists.map((item,index)=><ListDisplayer key={index} dishes={item.dishes}/>)
-
-
     renderOrders = (orders)=>this.renderListDisplayer(orders)
     renderFavorites = (favorites) => this.renderListDisplayer(favorites)
     
@@ -16,8 +14,8 @@ class MyProfile extends React.Component{
     return (
        <div>
          <p>Hello, {user.name}!</p>
-         {this.renderOrders(user.orders)}
-         {this.renderFavorites(user.favorites)}
+         {user.orders? this.renderOrders(user.orders) :null}
+         {user.favorites? this.renderFavorites(user.favorites):null}
        </div>
    )
 }
