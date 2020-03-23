@@ -3,9 +3,14 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import RestaurantContainer from './containers/restaurantContainer';
 import UserContainer from './containers/userContainer.js'
+import {connect} from 'react-redux'
+import {fetchLoggedInUser} from './actions/userAction'
 
 class App extends React.Component {
-
+   
+  componentDidMount(){
+     this.props.fetchLoggedInUser()
+  }
   
   render(){
   return (
@@ -25,9 +30,11 @@ class App extends React.Component {
  }
 }
 
-export default App;
+const mapDispatchToProps = dispatch =>{
+  return{
+    fetchLoggedInUser: token => dispatch(fetchLoggedInUser(token))
+  }
+}
 
-/* <RestaurantContainer />
-<UserContainer />
-{/* <FavoritesContainer />
-<Footer> */
+export default connect(null, mapDispatchToProps)(App);
+

@@ -42,6 +42,32 @@ export function createUser(userinfo){
         })
 }
 
+export function fetchLoggedInUser(token){
+    return dispatch=>{
+        const token = localStorage.token
+        if (token) {
+            return fetch("http://localhost:3001/auto-login", {
+              method: "GET",
+              headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+                'Authorization': `Bearer ${token}`
+              }
+            })
+              .then(resp => resp.json())
+              .then(data => {
+                if (data.error) {
+                    alert(data.error)
+                  localStorage.removeItem("token")
+                } else {
+                  dispatch(loginUser(data.user))
+                }
+              })
+          }
+    }
+}
+
+
 
 const loginUser = userObj => ({
     type: 'LOGIN_USER',
