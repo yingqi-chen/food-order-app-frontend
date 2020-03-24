@@ -12,6 +12,7 @@ const Dish = ({dish}) =>{
         alt={dish.name} />
         <h5>{dish.name}</h5>
         <Button size="sm" variant="primary">Order</Button>
+        {/* depending on where it comes from, if a request makes from previous order then we don't have a order button  */}
     </div>
     )
 }

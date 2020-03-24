@@ -38,6 +38,7 @@
 }
 
 .jumbotron{
+  background-image: url("https://anthemtoday.com/wp-content/uploads/hm_bbpui/4386/ko6n4qn3fd4y7mvu2tq671v2pgrvmgox.jpg");
   background-image: repeat-x fixed bottom;
   background-size:cover;
   min-height: 250px;
@@ -51,6 +52,15 @@
    position: absolute;
    left: 10%
 
+}
+
+.navbar{
+  color: azure;
+  height: 50px;
+}
+
+.navbar-nav{
+  color: azure
 }
 
 
