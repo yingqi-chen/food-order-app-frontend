@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.jumbotron{
+  background-image: repeat-x fixed bottom;
+  background-size:cover;
+  min-height: 300px;
+  z-index: -2;
+}
+
+.title{
+   z-index: 2;
+   color:white;
+   opacity: 1.5;
+   font-family: fantasy;
+   font-size: 5px;
+
+}
+
+
+

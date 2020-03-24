@@ -5,6 +5,7 @@ import RestaurantContainer from './containers/restaurantContainer';
 import UserContainer from './containers/userContainer.js'
 import {connect} from 'react-redux'
 import {fetchLoggedInUser} from './actions/userAction'
+import Header from './components/Header'
 
 class App extends React.Component {
    
@@ -15,7 +16,7 @@ class App extends React.Component {
   render(){
   return (
     <div>
-      {/* <HeaderJumbo /> */}
+      <Header />
       <Router>
        <Switch>
          <Route exact path="/" component={RestaurantContainer} />
