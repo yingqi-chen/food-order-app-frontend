@@ -2,9 +2,14 @@ import React from 'react'
 
 const Dish = ({dish}) =>{
     return(
-    <div>
-        {dish.name}
-        <img src={`./images/${dish.image}`} alt={dish.name} />
+    <div className="col-4">  
+        <img
+        width = "100%" 
+        height = "300px"
+        className="fluid" 
+        src={`./images/${dish.image}`} 
+        alt={dish.name} />
+        <p >{dish.name}</p>
     </div>
     )
 }

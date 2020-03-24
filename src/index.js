@@ -9,6 +9,7 @@ import dishReducer from './reducers/dishReducer.js'
 import userReducer from './reducers/userReducer'
 import {combineReducers} from 'redux'
 import loadingReducer from './reducers/loadingReducer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const rootReducer = combineReducers({
