@@ -6,6 +6,7 @@ import UserContainer from './containers/userContainer.js'
 import {connect} from 'react-redux'
 import {fetchLoggedInUser} from './actions/userAction'
 import Header from './components/Header'
+import './App.css'
 
 class App extends React.Component {
    
