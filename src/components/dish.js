@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button'
 
 const Dish = ({dish}) =>{
     return(
@@ -10,6 +11,7 @@ const Dish = ({dish}) =>{
         src={`./images/${dish.image}`} 
         alt={dish.name} />
         <p >{dish.name}</p>
+        <Button size="sm" variant="primary">Order</Button>
     </div>
     )
 }
