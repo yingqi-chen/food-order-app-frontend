@@ -5,7 +5,7 @@ const Dish = ({dish}) =>{
     <div className="col-4">  
         <img
         width = "100%" 
-        height = "300px"
+        height = "70%"
         className="fluid" 
         src={`./images/${dish.image}`} 
         alt={dish.name} />
