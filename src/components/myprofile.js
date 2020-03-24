@@ -4,9 +4,22 @@ import ListDisplayer from './ListDisplayer'
 class MyProfile extends React.Component{
 
     renderListDisplayer = (lists)=>lists.map((item,index)=><ListDisplayer key={index} dishes={item.dishes}/>)
-    renderOrders = (orders)=>this.renderListDisplayer(orders)
-    renderFavorites = (favorites) => this.renderListDisplayer(favorites)
-    
+    renderOrders = (orders)=>{
+      return (
+        <div className="container order-lists">
+           <h3>My orders</h3>
+           {this.renderListDisplayer(orders)}
+        </div>
+      )
+    }
+    renderFavorites = (favorites) => {
+      return (
+        <div className="container favorite-lists">
+           <h3>My favorites</h3>
+           {this.renderListDisplayer(favorites)}
+        </div>
+      )
+    }    
 
    
     render(){

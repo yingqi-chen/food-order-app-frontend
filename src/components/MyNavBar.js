@@ -11,9 +11,11 @@ export const MyNavBar = () =>{
         <div className="container">
            <Nav>
            <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/">Home</Nav.Link>
-           <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/2/orders">My orders</Nav.Link>
-           <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/">My favorites</Nav.Link>
+           <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/myprofile">My profile</Nav.Link>
+           <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/signup">Sign up</Nav.Link>
+           <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/login">Log in</Nav.Link>
 
+           
            {/* <links>
            <userNavBar>        */}
            </Nav>
