@@ -16,6 +16,7 @@ export function loginUserFetch(userInfo){
                 alert(data.error)
             }else{
              localStorage.setItem("token", data.jwt)
+             console.log("after logged in",data)
              dispatch(loginUser(data.user))
             }
          })
@@ -60,7 +61,8 @@ export function fetchLoggedInUser(token){
                     alert(data.error)
                   localStorage.removeItem("token")
                 } else {
-                  dispatch(loginUser(data.user))
+                  console.log("after auto-loggedd in",data)
+                   dispatch(loginUser(data.user))               
                 }
               })
           }
