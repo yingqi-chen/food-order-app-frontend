@@ -9,12 +9,10 @@ export function loginUserFetch(userInfo){
         .then(r=>r.json())
         .then(data=>{
             if(data.error){
-              debugger
                 alert(data.error)
             }else{
              let user_json = JSON.parse(data.user) 
              localStorage.setItem("token", data.jwt)
-             debugger
              dispatch(loginUser(user_json))
             }
          })

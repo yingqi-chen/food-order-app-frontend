@@ -7,8 +7,9 @@ import {connect} from 'react-redux'
 import {fetchLoggedInUser} from './actions/userAction'
 import Header from './components/Header'
 import './App.css'
-import MyNavBar from './components/MyNavBar'
+import MyLoggedInNavBar from './components/MyLoggedInNavBar'
 import {logOutUser} from './actions/userAction'
+import MyNotLoggedInNavBar from './components/MyNotLoggedinNavBar';
 
 class App extends React.Component {
    
@@ -25,7 +26,7 @@ class App extends React.Component {
   render(){
   return (
     <div>
-      <MyNavBar logOut = {this.logOut}/>
+      {this.props.login? <MyLoggedInNavBar logOut = {this.logOut}/> : <MyNotLoggedInNavBar />}
       <Header />
       <Router>
        <Switch>
@@ -41,6 +42,15 @@ class App extends React.Component {
  }
 }
 
+
+const mapStateToProps = state =>{
+  return{
+    login: state.user.login
+  }
+}
+
+
+
 const mapDispatchToProps = dispatch =>{
   return{
     fetchLoggedInUser: () => dispatch(fetchLoggedInUser()),
@@ -48,5 +58,5 @@ const mapDispatchToProps = dispatch =>{
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
