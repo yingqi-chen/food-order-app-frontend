@@ -1,7 +1,3 @@
-
-
-
-
 export function loginUserFetch(userInfo){
     return dispatch=>fetch('http://localhost:3001/login', {
           method: "POST",
@@ -71,12 +67,17 @@ export function fetchLoggedInUser(){
 }
 
 
-
 const loginUser = userObj => {
  return{
     type: 'LOGIN_USER',
     payload: userObj
 }
+}
+
+export const logOutUser = ()=>{
+  return {
+    type: 'LOGOUT_USER'
+  }
 }
 
 

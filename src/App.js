@@ -8,17 +8,24 @@ import {fetchLoggedInUser} from './actions/userAction'
 import Header from './components/Header'
 import './App.css'
 import MyNavBar from './components/MyNavBar'
+import {logOutUser} from './actions/userAction'
 
 class App extends React.Component {
    
   componentDidMount(){
      this.props.fetchLoggedInUser()
   }
+
+  logOut = ()=>{
+    localStorage.removeItem("token")
+    this.props.logOutUser()
+    alert("Succefully log out!")
+  }
   
   render(){
   return (
     <div>
-      <MyNavBar />
+      <MyNavBar logOut = {this.logOut}/>
       <Header />
       <Router>
        <Switch>
@@ -36,7 +43,8 @@ class App extends React.Component {
 
 const mapDispatchToProps = dispatch =>{
   return{
-    fetchLoggedInUser: () => dispatch(fetchLoggedInUser())
+    fetchLoggedInUser: () => dispatch(fetchLoggedInUser()),
+    logOutUser: ()=>dispatch(logOutUser())
   }
 }
 
