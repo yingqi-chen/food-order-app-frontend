@@ -36,7 +36,7 @@ class App extends React.Component {
 
 const mapDispatchToProps = dispatch =>{
   return{
-    fetchLoggedInUser: token => dispatch(fetchLoggedInUser(token))
+    fetchLoggedInUser: () => dispatch(fetchLoggedInUser())
   }
 }
 

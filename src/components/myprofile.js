@@ -23,14 +23,14 @@ class MyProfile extends React.Component{
 
    
     render(){
-        debugger
         let user = this.props.user
     return (
        <div>
-         <p>Hello, {user.name}!</p>
+         {/* <p>Hello, {user.name}!</p>
        
          {user.orders? this.renderOrders(user.orders) :null}
-         {user.favorites? this.renderFavorites(user.favorites):null}
+         {user.favorites? this.renderFavorites(user.favorites):null} */}
+         hello my profile
        </div>
    )
 }

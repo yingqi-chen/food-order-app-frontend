@@ -13,11 +13,13 @@ export function loginUserFetch(userInfo){
         .then(r=>r.json())
         .then(data=>{
             if(data.error){
+              debugger
                 alert(data.error)
             }else{
+             let user_json = JSON.parse(data.user) 
              localStorage.setItem("token", data.jwt)
-             console.log("after logged in",data)
-             dispatch(loginUser(data.user))
+             debugger
+             dispatch(loginUser(user_json))
             }
          })
  }
@@ -43,7 +45,7 @@ export function createUser(userinfo){
         })
 }
 
-export function fetchLoggedInUser(token){
+export function fetchLoggedInUser(){
     return dispatch=>{
         const token = localStorage.token
         if (token) {
@@ -61,8 +63,7 @@ export function fetchLoggedInUser(token){
                     alert(data.error)
                   localStorage.removeItem("token")
                 } else {
-                  console.log("after auto-loggedd in",data)
-                   dispatch(loginUser(data.user))               
+                   dispatch(loginUser(data))               
                 }
               })
           }
@@ -71,10 +72,12 @@ export function fetchLoggedInUser(token){
 
 
 
-const loginUser = userObj => ({
+const loginUser = userObj => {
+ return{
     type: 'LOGIN_USER',
     payload: userObj
-})
+}
+}
 
 
 

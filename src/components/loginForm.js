@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux';
 import {loginUserFetch} from '../actions/userAction'
+import Button from 'react-bootstrap/Button'
 
 
 
@@ -38,21 +39,22 @@ class LoginForm extends React.Component{
 
     render(){
         return (        
-            <div>
-               <form onSubmit = {this.handleSubmit}>
-                   <label>Email: </label>
+            <div className="container">
+                <h1>Log in here!</h1>
+               <form  onSubmit = {this.handleSubmit}>
+                   <label>Email: </label><br></br>
                    <input 
                       name = "email"
                       type="text" 
                       onChange={this.handleChange} 
-                      value={this.state.email}/>
-                   <label>Password: </label>
+                      value={this.state.email}/><br></br>
+                   <label>Password: </label><br></br>
                    <input 
                       name = "password"
                       type="password" 
                       onChange={this.handleChange} 
-                      value={this.state.password}/>
-                    <input type="submit"/>
+                      value={this.state.password}/><br></br>
+                    <Button variant="primary" type="submit">Log in</Button>
                 </form>
             </div>
         )
