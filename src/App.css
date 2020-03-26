@@ -54,6 +54,8 @@
 
 }
 
+
+
 .navbar{
   color: azure;
   height: 50px;
@@ -62,6 +64,12 @@
 .navbar-nav{
   color: azure
 }
+
+form {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
 
 
 

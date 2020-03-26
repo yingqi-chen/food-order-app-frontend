@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {createUser} from '../actions/userAction'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 
 class Signup extends React.Component{
     
@@ -32,7 +34,7 @@ class Signup extends React.Component{
     render(){
         return (        
             <div>
-               <form onSubmit = {this.handleSubmit}>
+               <Form onSubmit = {this.handleSubmit}>
                    <p>Sign Up</p>
                    <label>Username: </label>
                    <input 
@@ -53,7 +55,7 @@ class Signup extends React.Component{
                       onChange={this.handleChange} 
                       value={this.state.password}/>
                     <input type="submit"/>
-                </form>
+                </Form>
             </div>
         )
       

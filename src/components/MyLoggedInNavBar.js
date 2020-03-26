@@ -13,7 +13,7 @@ export const MyLoggedInNavBar = ({logOut}) =>{
            <Nav>
            <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/">Home</Nav.Link>
            <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/myprofile">My profile</Nav.Link>
-           <Button onClick = {logOut}>Log Out</Button>
+           <Button size="sm" onClick = {logOut}>Log Out</Button>
            </Nav>
         </div>
     </Navbar>
