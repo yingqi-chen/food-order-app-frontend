@@ -49,7 +49,6 @@ class LoginForm extends React.Component{
                        name = "email"
                        onChange={this.handleChange} 
                        type="email" 
-                       placeholder="Please enter your email" 
                        value={this.state.email}/>
                 </Form.Group>
                
@@ -59,7 +58,6 @@ class LoginForm extends React.Component{
                         name = "password"
                         onChange={this.handleChange} 
                         type="password" 
-                        placeholder="Please enter your password" 
                         value={this.state.password}/>
                 </Form.Group>
                

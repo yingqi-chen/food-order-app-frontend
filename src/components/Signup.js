@@ -34,7 +34,7 @@ class Signup extends React.Component{
     render(){
         return (        
                <Form className="container" onSubmit = {this.handleSubmit}>
-                 <h1>Sign Up Form</h1>
+                 <h1>Sign Up</h1>
 
                  <Form.Group controlId="formUserName">
                    <Form.Label>Username </Form.Label>
@@ -62,7 +62,7 @@ class Signup extends React.Component{
                       onChange={this.handleChange} 
                       value={this.state.password}/>
                   </Form.Group>
-                  
+
                 <Button variant="primary" type="submit">Sign up</Button>
                 </Form>
         )
