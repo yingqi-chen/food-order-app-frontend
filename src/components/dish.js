@@ -11,8 +11,11 @@ const Dish = ({dish}) =>{
         src={`./images/${dish.image}`} 
         alt={dish.name} />
         <h5>{dish.name}</h5>
-        <Button size="sm" variant="primary">Order</Button>
-        {/* depending on where it comes from, if a request makes from previous order then we don't have a order button  */}
+        <Button size="sm" variant="primary">Order</Button> 
+        {/* depending on where it comes from, if a request makes from order then we don't have a order button,
+        if it comes from favorites then no add-favorites button
+        only when it comes from dishes it has all two buttons
+        also the button should inherit some functions from the parent component*/}
     </div>
     )
 }

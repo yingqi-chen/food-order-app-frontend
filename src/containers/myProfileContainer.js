@@ -1,5 +1,8 @@
 import React from 'react'
 import ListDisplayer from '../components/ListDisplayer'
+import OrdersContainer from '../components/OrdersContainer'
+import FavoritesContainer from '../components/FavoritesContainer'
+import {connect} from 'react-redux'
 
 class MyProfileContainer extends React.Component{
 
@@ -25,16 +28,30 @@ class MyProfileContainer extends React.Component{
     render(){
         let user = this.props.user
     return (
-       <div>
-         <p>Hello, {user.name}!</p>
+       <div className = "container">
+         <h1>Hello, {user.name}!</h1>
        
-         {user.orders? this.renderOrders(user.orders) :null}
-         {user.favorites? this.renderFavorites(user.favorites):null}
+         {/* {user.orders? <OrdersContainer /> :<h3>You have no orders.</h3>}
+         {user.favorites? <FavoritesContainer />:<h3>You have no orders.</h3>} */}
   
        </div>
    )
 }
 }
 
+// const mapStateToProps = state =>{
+//   debugger
+//   return {
+//     orders: state.user,
+//     // favorites: state.user.user.favorites
+//   }
+// }
 
-export default MyProfileContainer
+const mapStateToProps = state =>{
+  return {
+      orders: state.user.user.orders,
+      favorite: state.user.user.favorites
+  }
+}
+
+export default connect(mapStateToProps)(MyProfileContainer)
