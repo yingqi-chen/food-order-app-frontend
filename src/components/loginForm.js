@@ -30,20 +30,18 @@ class LoginForm extends React.Component{
        
         debugger
         if (!this.state.email.includes("@")){
-            emailError = "Invalid email"
-            this.setState({
-                emailError 
-            })
-            isValid = false
+             emailError = "Invalid email"
         }
         
         if(!this.state.password){
             passwordError = "You have to enter password to log in."
-            this.setState({
-                passwordError 
-            })
         }
-        debugger
+        
+        if (emailError||passwordError){
+            this.setState({emailError,passwordError})
+            isValid = false
+        }
+
         return isValid
     }
 

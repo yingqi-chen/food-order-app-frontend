@@ -75,7 +75,8 @@ input.form-control{
 
 .error{
   color: red;
-  padding-bottom: 5%;
+  margin-top: 0;
+  padding-bottom: 3%;
 }
 
 
