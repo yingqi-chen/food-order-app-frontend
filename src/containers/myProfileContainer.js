@@ -1,7 +1,7 @@
 import React from 'react'
-import ListDisplayer from './ListDisplayer'
+import ListDisplayer from '../components/ListDisplayer'
 
-class MyProfile extends React.Component{
+class MyProfileContainer extends React.Component{
 
     renderListDisplayer = (lists)=>lists.map((item,index)=><ListDisplayer key={index} dishes={item.dishes}/>)
     renderOrders = (orders)=>{
@@ -37,4 +37,4 @@ class MyProfile extends React.Component{
 }
 
 
-export default MyProfile
+export default MyProfileContainer

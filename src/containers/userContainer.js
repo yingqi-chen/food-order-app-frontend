@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginForm from '../components/loginForm'
-import MyProfile from '../components/myprofile'
+import MyProfileContainer from '../containers/myProfileContainer'
 import {connect} from 'react-redux'
 import Signup from '../components/Signup'
 
@@ -11,7 +11,7 @@ class UserContainer extends React.Component{
     renderProperContent = ()=>{
         let path = this.props.match.path
         if (this.props.loggedIn){
-            return  <MyProfile user={this.props.user}/>
+            return  <MyProfileContainer user={this.props.user}/>
         }else if(path==="/signup"){
             return <Signup />
         }else{
