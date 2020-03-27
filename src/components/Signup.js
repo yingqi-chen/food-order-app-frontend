@@ -4,13 +4,18 @@ import {createUser} from '../actions/userAction'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
+
+const initialState = {
+  email:"",
+  password: "",
+  emailError: "",
+  passwordError: "",
+  nameError: ""
+}
+
 class Signup extends React.Component{
     
-    state = {
-        name: "",
-        password: "",
-        email: ""
-    }
+    state = initialState
     
       handleChange = event => {
         this.setState({

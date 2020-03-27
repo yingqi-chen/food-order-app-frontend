@@ -4,30 +4,54 @@ import {loginUserFetch} from '../actions/userAction'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
-
+const initialState = {
+    email:"",
+    password: "",
+    emailError: "",
+    passwordError: ""
+}
 
 class LoginForm extends React.Component{
     
-    state = {
-        email:"",
-        password: ""
-    }
+    state = initialState
 
 
     handleChange = (e) =>{
-        debugger
        this.setState({
           [e.target.name]: e.target.value 
        })
     }
 
+    validate = () =>{
+        // let passwordError=""
+        let isValid = true
+        let passwordError = ""
+        let emailError = ""
+       
+        debugger
+        if (!this.state.email.includes("@")){
+            emailError = "Invalid email"
+            this.setState({
+                emailError 
+            })
+            isValid = false
+        }
+        
+        if(!this.state.password){
+            passwordError = "You have to enter password to log in."
+            this.setState({
+                passwordError 
+            })
+        }
+        debugger
+        return isValid
+    }
+
     handleSubmit = event => {
         event.preventDefault();
+        if (this.validate()){
         this.props.loginUserFetch(this.state)
-        this.setState({
-            email:"",
-            password: ""
-        })
+        this.setState(initialState)}
       }
 
       authenticateUser = (j)=>{
@@ -52,6 +76,7 @@ class LoginForm extends React.Component{
                        value={this.state.email}/>
                 </Form.Group>
                
+               {this.state.emailError ? <div className="error">{this.state.emailError}</div>: null}
                 <Form.Group controlId="formUserName">
                      <Form.Label>Password</Form.Label>
                      <Form.Control 
@@ -60,7 +85,8 @@ class LoginForm extends React.Component{
                         type="password" 
                         value={this.state.password}/>
                 </Form.Group>
-               
+                {this.state.passwordError ? <div className="error">{this.state.passwordError}</div>: null}
+
                 <Button variant="primary" type="submit">Log in</Button>
             </Form>
         )
