@@ -88,11 +88,12 @@ input.form-control{
   padding: 1%;
 }
 
-.footer{
+.page-footer{
   background-color: rgb(54, 58, 57);
-  min-height: 80px;
   margin-top: 3%;
   color: antiquewhite;
+  position: absolute;
+  bottom: 0;
 }
 
 .contact-block{

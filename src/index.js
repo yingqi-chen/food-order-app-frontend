@@ -10,12 +10,14 @@ import userReducer from './reducers/userReducer'
 import {combineReducers} from 'redux'
 import loadingReducer from './reducers/loadingReducer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import orderReducer from './reducers/orderReducer'
 
 
 const rootReducer = combineReducers({
     dishes: dishReducer,
     user: userReducer,
-    loading: loadingReducer
+    loading: loadingReducer,
+    order: orderReducer
   })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
