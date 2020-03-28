@@ -10,6 +10,7 @@ import './App.css'
 import MyLoggedInNavBar from './components/MyLoggedInNavBar'
 import {logOutUser} from './actions/userAction'
 import MyNotLoggedInNavBar from './components/MyNotLoggedinNavBar';
+import Footer from './components/Footer'
 
 class App extends React.Component {
    
@@ -36,7 +37,7 @@ class App extends React.Component {
          <Route exact path="/myprofile" component={UserContainer} />
        </Switch>
       </Router>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
  }

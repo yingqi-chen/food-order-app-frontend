@@ -88,6 +88,22 @@ input.form-control{
   padding: 1%;
 }
 
+.footer{
+  background-color: rgb(54, 58, 57);
+  min-height: 80px;
+  margin-top: 3%;
+  color: antiquewhite;
+}
+
+.contact-block{
+  padding: 1%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.contact-block p{
+  margin: 0;
+}
+
 
 
 
