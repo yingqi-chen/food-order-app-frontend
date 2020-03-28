@@ -79,6 +79,15 @@ input.form-control{
   padding-bottom: 3%;
 }
 
+.order-block{
+  background-color: tan;
+  margin: 2%;
+}
+
+.order-header{
+  padding: 1%;
+}
+
 
 
 

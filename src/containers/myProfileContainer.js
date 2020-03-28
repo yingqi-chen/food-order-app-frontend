@@ -10,15 +10,21 @@ import moment from 'moment'
 class MyProfileContainer extends React.Component{
     
     renderListDisplayer = (lists)=>{      
-      // return lists.map((item,index)=>{
-      //   debugger
-      //   return 
-        // <ListDisplayer key={index} dishes={item.dishes} date ={item.date} total={item.total}/>
-        return moment(lists[0].date).calendar();
-      // }
-      // )
+      return lists.map((item,index)=>{
+        return (
+        <div className="order-block container">
+           <div className="order-header">
+            <h2>Order placed: {moment(item.date).calendar()}</h2>
+             <h3>Order total: ${item.total}</h3>
+            </div>
+            <ListDisplayer key={index} dishes={item.dishes} date ={item.date} total={item.total}/> 
+        </div>   
+        )}
+      )
       
     }
+
+
 
     
   
