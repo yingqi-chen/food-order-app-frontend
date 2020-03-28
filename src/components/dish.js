@@ -1,24 +1,40 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
+import {addOrder} from '../actions/orderAction'
+import {connect} from 'react-redux'
 
-const Dish = ({dish}) =>{
-    return(
-    <div className="col-4">  
-        <img
-        width = "100%" 
-        height = "70%"
-        className="fluid" 
-        src={`./images/${dish.image}`} 
-        alt={dish.name} />
-        <h5>{dish.name}         ${dish.price}</h5>
-        <Button size="sm" variant="primary">Order</Button> 
-        {/* depending on where it comes from, if a request makes from order then we don't have a order button,
-        if it comes from favorites then no add-favorites button
-        only when it comes from dishes it has all two buttons
-        also the button should inherit some functions from the parent component*/}
-    </div>
+class Dish extends React.Component{
+
+    handleSubmit = () =>{
+        debugger
+     this.props.addOrder()
+    }
+    
+    
+    render(){
+      let dish = this.props.dish  
+        return(
+        <div className="col-4">  
+            <img
+            width = "100%" 
+            height = "70%"
+            className="fluid" 
+            src={`./images/${dish.image}`} 
+            alt={dish.name} />
+            <h5>{dish.name}         ${dish.price}</h5>
+            <Button onSubmit = {this.handleSubmit} size="sm" variant="primary">Order</Button> 
+            {/* depending on where it comes from, if a request makes from order then we don't have a order button,
+            only when it comes from dishes it has all two buttons
+            also the button should inherit some functions from the parent component
+            and if it is ordered, there is a cancel button!for the dish*/}
+        </div>
     )
+  }
+}
+
+const mapDispatchToProps = dispatch =>{
+    return addOrder = (order) =>dispatch(addOrder(order))
 }
 
 
-export default Dish
+export default connect(null,mapDispatchToProps)(Dish)
