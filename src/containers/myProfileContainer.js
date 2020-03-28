@@ -6,7 +6,15 @@ import {connect} from 'react-redux'
 
 class MyProfileContainer extends React.Component{
 
-    renderListDisplayer = (lists)=>lists.map((item,index)=><ListDisplayer key={index} dishes={item.dishes}/>)
+    renderListDisplayer = (lists,hasName)=>{      
+      return lists.map((item,index)=>{
+        return hasName? <h1>hasName</h1>:
+        <h1>NOName</h1>
+        // <ListDisplayer key={index} dishes={item.dishes} date ={item.date} total={item.total}/>
+        
+      })
+      
+    }
 
     
     

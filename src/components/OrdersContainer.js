@@ -4,7 +4,7 @@ const OrderContainer = ({orders,renderListDisplayer,total}) => {
     return (
       <div className="container order-lists">
          <h3>My previous orders</h3>
-         {renderListDisplayer(orders)}
+         {renderListDisplayer(orders, false)}
       </div>
     )
   }
