@@ -5,9 +5,8 @@ import {connect} from 'react-redux'
 
 class Dish extends React.Component{
 
-    handleSubmit = () =>{
-        debugger
-     this.props.addOrder()
+    handleClick = (dish) =>{
+     this.props.addOrder(dish)
     }
     
     
@@ -22,7 +21,7 @@ class Dish extends React.Component{
             src={`./images/${dish.image}`} 
             alt={dish.name} />
             <h5>{dish.name}         ${dish.price}</h5>
-            <Button onSubmit = {this.handleSubmit} size="sm" variant="primary">Order</Button> 
+            <Button onClick = {()=>this.handleClick(dish)} size="sm" variant="primary">Order</Button> 
             {/* depending on where it comes from, if a request makes from order then we don't have a order button,
             only when it comes from dishes it has all two buttons
             also the button should inherit some functions from the parent component
@@ -33,7 +32,9 @@ class Dish extends React.Component{
 }
 
 const mapDispatchToProps = dispatch =>{
-    return addOrder = (order) =>dispatch(addOrder(order))
+    return {
+        addOrder: (dish) =>dispatch(addOrder(dish))
+    }
 }
 
 
