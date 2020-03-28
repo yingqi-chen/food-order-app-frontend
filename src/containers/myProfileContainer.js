@@ -2,16 +2,21 @@ import React from 'react'
 import ListDisplayer from '../components/ListDisplayer'
 import OrdersContainer from '../components/OrdersContainer'
 import {connect} from 'react-redux'
+import moment from 'moment'
+
+
+
 
 class MyProfileContainer extends React.Component{
-
-    renderListDisplayer = (lists,hasName)=>{      
-      return lists.map((item,index)=>{
-        return hasName? <h1>hasName</h1>:
-        <h1>NOName</h1>
+    
+    renderListDisplayer = (lists)=>{      
+      // return lists.map((item,index)=>{
+      //   debugger
+      //   return 
         // <ListDisplayer key={index} dishes={item.dishes} date ={item.date} total={item.total}/>
-        
-      })
+        return moment(lists[0].date).calendar();
+      // }
+      // )
       
     }
 
