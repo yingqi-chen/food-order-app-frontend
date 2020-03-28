@@ -10,7 +10,7 @@ const Dish = ({dish}) =>{
         className="fluid" 
         src={`./images/${dish.image}`} 
         alt={dish.name} />
-        <h5>{dish.name}</h5>
+        <h5>{dish.name}         ${dish.price}</h5>
         <Button size="sm" variant="primary">Order</Button> 
         {/* depending on where it comes from, if a request makes from order then we don't have a order button,
         if it comes from favorites then no add-favorites button
