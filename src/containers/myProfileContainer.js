@@ -7,14 +7,10 @@ import {connect} from 'react-redux'
 class MyProfileContainer extends React.Component{
 
     renderListDisplayer = (lists)=>lists.map((item,index)=><ListDisplayer key={index} dishes={item.dishes}/>)
-    renderOrders = (orders)=>{
-      return (
-        <div className="container order-lists">
-           <h3>My orders</h3>
-           {this.renderListDisplayer(orders)}
-        </div>
-      )
-    }
+
+    
+    
+    
     renderFavorites = (favorites) => {
       return (
         <div className="container favorite-lists">
@@ -30,27 +26,21 @@ class MyProfileContainer extends React.Component{
     return (
        <div className = "container">
          <h1>Hello, {user.name}!</h1>
-       
-         {/* {user.orders? <OrdersContainer /> :<h3>You have no orders.</h3>}
-         {user.favorites? <FavoritesContainer />:<h3>You have no orders.</h3>} */}
+         {/* <MyCurrentOrder /> */}  
+         {user.orders? <OrdersContainer orders={this.props.orders} renderListDisplayer={this.renderListDisplayer} total={this.calculateTotal}/> : <h3>You have no orders.</h3>}
+         {user.favorites? <FavoritesContainer renderListDisplayer={this.renderListDisplayer} favorites = {this.props.favorites}/>:<h3>You have no favorites.</h3>}
   
        </div>
    )
 }
 }
 
-// const mapStateToProps = state =>{
-//   debugger
-//   return {
-//     orders: state.user,
-//     // favorites: state.user.user.favorites
-//   }
-// }
+
 
 const mapStateToProps = state =>{
   return {
       orders: state.user.user.orders,
-      favorite: state.user.user.favorites
+      favorites: state.user.user.favorites
   }
 }
 
