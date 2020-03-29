@@ -6,10 +6,14 @@ import {connect} from 'react-redux'
 class Dish extends React.Component{
 
     handleClick = (dish) =>{
-     this.props.addOrder(dish)
-    }
+        this.props.addOrder(dish)
+        localStorage.setItem("order", JSON.stringify(this.props.order))
+        alert(`${dish.name} added to your order!`)
+      }  
     
-    
+
+
+
     render(){
       let dish = this.props.dish  
         return(
@@ -37,5 +41,11 @@ const mapDispatchToProps = dispatch =>{
     }
 }
 
+const mapStateToProps = state =>{
+    return{
+        order: state.order
+    }
+}
 
-export default connect(null,mapDispatchToProps)(Dish)
+
+export default connect(mapStateToProps,mapDispatchToProps)(Dish)
