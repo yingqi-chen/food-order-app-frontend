@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import ListDisplayer from '../components/ListDisplayer'
 import OrdersContainer from './OrdersContainer'
 import {connect} from 'react-redux'
@@ -9,12 +9,17 @@ import {connect} from 'react-redux'
 class MyProfileContainer extends React.Component{
     
     renderListDisplayer = (lists)=>{      
-      return lists.map((item,index)=><ListDisplayer item={item} key={index} dishes={item.dishes} /> 
+      return lists.map((item,index)=><ListDisplayer item={item} key={index} dateNeedMoment = {true}/> 
       )      
     }
 
     renderCurrentOrder = () =>{
-      debugger
+      return this.props.currentOrder.dishes.length===0? 
+      null 
+      : <Fragment>
+           <h3>My Current Order</h3>
+           <ListDisplayer item={this.props.currentOrder} dateNeedMoment={false}/>
+        </Fragment>
     }
 
 
