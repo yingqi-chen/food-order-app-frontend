@@ -25,7 +25,9 @@ class Dish extends React.Component{
             src={`./images/${dish.image}`} 
             alt={dish.name} />
             <h5>{dish.name}         ${dish.price}</h5>
-            <Button onClick = {()=>this.handleClick(dish)} size="sm" variant="primary">Order</Button> 
+            <Button onClick = {()=>this.handleClick(dish)} size="sm" variant="primary">Order</Button>   
+            <Button onClick = {()=>this.handleClick(dish)} size="sm" variant="secondary">Cancel</Button> 
+
             {/* depending on where it comes from, if a request makes from order then we don't have a order button,
             only when it comes from dishes it has all two buttons
             also the button should inherit some functions from the parent component
