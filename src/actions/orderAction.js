@@ -11,3 +11,10 @@ export function addOrder(dish){
     }
  }
 
+export function cancelOrder(dish){
+  return{
+    type: "CANCEL_ORDER",
+    payload: dish
+  }
+}
+

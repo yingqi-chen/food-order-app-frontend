@@ -1,26 +1,34 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
-import {addOrder} from '../actions/orderAction'
+import {addOrder, cancelOrder} from '../actions/orderAction'
 import {connect} from 'react-redux'
 
 class Dish extends React.Component{
 
-    handleClick = (dish) =>{
+    handleOrderClick = (dish) =>{
         this.props.addOrder(dish)
         localStorage.setItem("order", JSON.stringify(this.props.order))
         alert(`${dish.name} added to your order!`)
       } 
+
+    handleCancelClick = (dish) =>{
+        this.props.calcelOrder(dish)
+        localStorage.setItem("order", JSON.stringify(this.props.order))
+        alert(`${dish.name} have been removed from your order!`)
+    }
       
     renderButton = (dish) =>{
         let button = this.props.button
         if (button==="orderButton"){
-            return <Button onClick = {()=>this.handleClick(dish)} size="sm" variant="primary">Order</Button>   
+            return <Button onClick = {()=>this.handleOrderClick(dish)} size="sm" variant="primary">Order</Button>   
         }else if (button==="cancelButton"){
-            return <Button onClick = {()=>this.handleClick(dish)} size="sm" variant="secondary">Cancel</Button> 
+            return <Button onClick = {()=>this.handleCancelClick(dish)} size="sm" variant="secondary">Cancel</Button> 
         }else{
             return null
         }
     }
+
+    
     
 
 
@@ -37,11 +45,6 @@ class Dish extends React.Component{
             alt={dish.name} />
             <h5>{dish.name}         ${dish.price}</h5>
             {this.renderButton(dish)}
-
-            {/* depending on where it comes from, if a request makes from order then we don't have a order button,
-            only when it comes from dishes it has all two buttons
-            also the button should inherit some functions from the parent component
-            and if it is ordered, there is a cancel button!for the dish*/}
         </div>
     )
   }
@@ -49,7 +52,8 @@ class Dish extends React.Component{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        addOrder: (dish) =>dispatch(addOrder(dish))
+        addOrder: (dish) =>dispatch(addOrder(dish)),
+        calcelOrder: (dish) =>dispatch(cancelOrder(dish))
     }
 }
 
