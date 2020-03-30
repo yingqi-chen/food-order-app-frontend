@@ -18,8 +18,22 @@ const orderReducer = ( state = {dishes: [], total: 0, date: date}, action) => {
         case "CREATE_ORDER":
             return state;
         
-        case "DELETE_ORDER":
-            return state
+        case "CANCEL_ORDER":
+            let id=action.payload.id
+            let index = state.dishes.findIndex(x=>x.id===1)
+            
+            if(typeof (index)==="number"){
+                let dish = state.dishes[index]
+            return {
+                ...state,
+                dishes: {
+                    ...state.dishes.slice(0,index),
+                    ...state.dishes.slice(index+1)
+                }     
+            }}else{
+                alert("cannot find that dish!")
+                return state
+            }
 
         case "FETCH_ORDER":
             let order_json = action.payload

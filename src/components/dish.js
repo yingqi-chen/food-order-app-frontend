@@ -12,7 +12,7 @@ class Dish extends React.Component{
       } 
 
     handleCancelClick = (dish) =>{
-        this.props.calcelOrder(dish)
+        this.props.cancelOrder(dish)
         localStorage.setItem("order", JSON.stringify(this.props.order))
         alert(`${dish.name} have been removed from your order!`)
     }
@@ -27,11 +27,6 @@ class Dish extends React.Component{
             return null
         }
     }
-
-    
-    
-
-
 
     render(){
       let dish = this.props.dish  
