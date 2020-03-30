@@ -12,7 +12,7 @@ class MyProfileContainer extends React.Component{
          return(
         <div className="order-block container">
            <OrderHeader item={item} dateNeedMoment={true}/>
-           <ListDisplayer dishes={item.dishes} key={index} dateNeedMoment = {true}/>
+           <ListDisplayer dishes={item.dishes} key={index} dateNeedMoment = {true} button="noButton"/>
         </div> 
       )})      
     }
@@ -24,7 +24,7 @@ class MyProfileContainer extends React.Component{
            <h3>My Current Order</h3>
            <div className="order-block container">
               <OrderHeader item={this.props.currentOrder} dateNeedMoment={false}/>
-              <ListDisplayer dishes={this.props.currentOrder.dishes} />
+              <ListDisplayer dishes={this.props.currentOrder.dishes} button = "cancelButton"/>
            </div> 
         </Fragment>
     }

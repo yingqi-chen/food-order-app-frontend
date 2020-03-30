@@ -15,7 +15,7 @@ class RestaurantContainer extends React.Component {
     return (
       <div className="container" fluid="xs" >
         <p >The Dishes that you will like!</p>
-        <ListDisplayer dishes={this.props.dishes}/>
+        <ListDisplayer dishes={this.props.dishes} button="orderButton"/>
       </div>
     );
    }

@@ -9,7 +9,18 @@ class Dish extends React.Component{
         this.props.addOrder(dish)
         localStorage.setItem("order", JSON.stringify(this.props.order))
         alert(`${dish.name} added to your order!`)
-      }  
+      } 
+      
+    renderButton = (dish) =>{
+        let button = this.props.button
+        if (button==="orderButton"){
+            return <Button onClick = {()=>this.handleClick(dish)} size="sm" variant="primary">Order</Button>   
+        }else if (button==="cancelButton"){
+            return <Button onClick = {()=>this.handleClick(dish)} size="sm" variant="secondary">Cancel</Button> 
+        }else{
+            return null
+        }
+    }
     
 
 
@@ -25,8 +36,7 @@ class Dish extends React.Component{
             src={`./images/${dish.image}`} 
             alt={dish.name} />
             <h5>{dish.name}         ${dish.price}</h5>
-            <Button onClick = {()=>this.handleClick(dish)} size="sm" variant="primary">Order</Button>   
-            <Button onClick = {()=>this.handleClick(dish)} size="sm" variant="secondary">Cancel</Button> 
+            {this.renderButton(dish)}
 
             {/* depending on where it comes from, if a request makes from order then we don't have a order button,
             only when it comes from dishes it has all two buttons
