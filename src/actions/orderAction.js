@@ -1,7 +1,13 @@
 export function addOrder(dish){
-    console.log("within addOrder")
   return{
     type: "ADD_ORDER",
     payload: dish
  }}
+
+ export function fetchOrder(){
+    return{
+      type: "FETCH_ORDER",
+      payload: JSON.parse(localStorage.getItem("order"))
+    }
+ }
 

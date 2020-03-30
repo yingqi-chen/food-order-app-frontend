@@ -11,11 +11,17 @@ import MyLoggedInNavBar from './components/MyLoggedInNavBar'
 import {logOutUser} from './actions/userAction'
 import MyNotLoggedInNavBar from './components/MyNotLoggedinNavBar';
 import Footer from './components/Footer'
+import {fetchOrder} from './actions/orderAction'
 
 class App extends React.Component {
    
   componentDidMount(){
-     this.props.fetchLoggedInUser()
+    this.fetchEverything()   
+  }
+
+  fetchEverything = () =>{
+    this.props.fetchLoggedInUser()
+    this.props.fetchOrder() 
   }
 
   logOut = ()=>{
@@ -55,7 +61,8 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = dispatch =>{
   return{
     fetchLoggedInUser: () => dispatch(fetchLoggedInUser()),
-    logOutUser: ()=>dispatch(logOutUser())
+    logOutUser: ()=>dispatch(logOutUser()),
+    fetchOrder: ()=>dispatch(fetchOrder())
   }
 }
 

@@ -20,6 +20,17 @@ const orderReducer = ( state = {dishes: [], total: 0, date: date}, action) => {
         
         case "DELETE_ORDER":
             return state
+
+        case "FETCH_ORDER":
+            let order_json = action.payload
+            let sum = 0
+            order_json.dishes.forEach((x)=>sum+=x.price)
+            return {
+                ...state,
+                    date: order_json.date,
+                    dishes: order_json.dishes,
+                    total: sum
+            }
   
           default:
               return state
