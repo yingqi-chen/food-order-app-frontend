@@ -1,22 +1,28 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Dish from './dish'
 import {Row} from 'react-bootstrap'
+import moment from 'moment'
+
 
 
 class ListDisplayer extends React.Component{
-
-
-    //eg: if the array is [a(which stands for a string, like "date")],
-    // then to display the list, I hope there is a: {order[a]} for the list
     
-   
     render(){
+      let item = this.props.item
+      let dishes = this.props.dishes
     return(
+      <div className="order-block container">
+        <div className="order-header">
+          <h2>Order placed: {moment(item.date).calendar()}</h2>
+          <h3>Order total: ${item.total}</h3>
+        </div>
         <Row sm={1} md={2} lg={3}>
-         { this.props.dishes.map((d,index) => <Dish key={index} dish={d}/>)}
+          {dishes.map((d,index) => <Dish key={index} dish={d}/>)}
         </Row>
+      </div>
     )
-  }
+    }
+  
 }
 
     
