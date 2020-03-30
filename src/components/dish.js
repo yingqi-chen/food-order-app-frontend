@@ -11,8 +11,8 @@ class Dish extends React.Component{
         alert(`${dish.name} added to your order!`)
       } 
 
-    handleCancelClick = (dish) =>{
-        this.props.cancelOrder(dish)
+    async handleCancelClick = (dish) =>{
+        await this.props.cancelOrder(dish)
         localStorage.setItem("order", JSON.stringify(this.props.order))
         alert(`${dish.name} have been removed from your order!`)
     }
@@ -48,7 +48,7 @@ class Dish extends React.Component{
 const mapDispatchToProps = dispatch =>{
     return {
         addOrder: (dish) =>dispatch(addOrder(dish)),
-        calcelOrder: (dish) =>dispatch(cancelOrder(dish))
+        cancelOrder: (dish) =>dispatch(cancelOrder(dish))
     }
 }
 
