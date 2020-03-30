@@ -7,11 +7,9 @@ import {Row} from 'react-bootstrap'
 class ListDisplayer extends React.Component{
     
     render(){
-      debugger
-    return(
-    
+    return(    
         <Row sm={1} md={2} lg={3}>
-          {this.props.item.dishes.map((d,index) => <Dish key={index} dish={d}/>)}
+          {this.props.dishes.map((d,index) => <Dish key={index} dish={d}/>)}
         </Row>
     )
     }
