@@ -9,8 +9,9 @@ import {createOrder} from '../actions/orderAction'
 
 class MyProfileContainer extends React.Component{
     
-    renderListDisplayer = (lists)=>{      
-      return lists.map((item,index)=>{
+    renderListDisplayer = (lists)=>{
+  
+      return lists.reverse().map((item,index)=>{
          return(
         <div className="order-block container">
            <OrderHeader item={item} dateNeedMoment={true}/>
