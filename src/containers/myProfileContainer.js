@@ -26,9 +26,13 @@ class MyProfileContainer extends React.Component{
            <div className="order-block container">
               <OrderHeader item={this.props.currentOrder} dateNeedMoment={false}/>
               <ListDisplayer dishes={this.props.currentOrder.dishes} button = "cancelButton"/>
-              <Button >Submit Order</Button>
+              <Button onClick={this.handleClick}>Submit Order</Button>
            </div> 
         </Fragment>
+    }
+
+    handleClick = () =>{
+       this.createOrder()
     }
 
 
@@ -54,4 +58,10 @@ const mapStateToProps = state =>{
   }
 }
 
-export default connect(mapStateToProps)(MyProfileContainer)
+const mapDispatchToProps = dispatch => {
+  return {
+    createOrder: () => dispatch(createOrder())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyProfileContainer)
