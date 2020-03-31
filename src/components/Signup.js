@@ -29,7 +29,7 @@ class Signup extends React.Component{
         let isValid = true
         let passwordError = ""
         let emailError = ""
-        let nameError = " "
+        let nameError = ""
        
         if ((!this.state.email)||(!this.state.email.includes("@"))){
           emailError = "Invalid email"
