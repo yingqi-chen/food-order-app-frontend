@@ -28,7 +28,9 @@ export function createOrder(id){
           },
           body: JSON.stringify(order)
         }).then(res=>res.json())
-        .then(json=>alert("A new order is created!"))
+        .then(localStorage.removeItem("order"))
+        .then(dispatch({type: "CLEAR_ORDER"}))
+        .then(alert("A new order is created!"))
   }
 }
 

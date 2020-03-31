@@ -2,7 +2,9 @@ import moment from 'moment'
 
 const date = moment().calendar()
 
-const orderReducer = ( state = {dishes: [], total: 0, date: date}, action) => {
+let initialState = {dishes: [], total: 0, date: date}
+
+const orderReducer = ( state = initialState, action) => {
    
     switch(action.type){
       
@@ -15,8 +17,8 @@ const orderReducer = ( state = {dishes: [], total: 0, date: date}, action) => {
                 total: state.total + action.payload.price
             }
 
-        case "CREATE_ORDER":
-            return state;
+        case "CLEAR_ORDER":
+            return initialState;
         
         case "CANCEL_ORDER":
             let id=action.payload.id
