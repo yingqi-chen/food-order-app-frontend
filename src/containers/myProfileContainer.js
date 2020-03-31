@@ -4,6 +4,7 @@ import OrdersContainer from './OrdersContainer'
 import {connect} from 'react-redux'
 import OrderHeader from '../components/OrderHeader'
 import Button from 'react-bootstrap/Button'
+import {createOrder} from '../actions/orderAction'
 
 
 class MyProfileContainer extends React.Component{
@@ -32,7 +33,7 @@ class MyProfileContainer extends React.Component{
     }
 
     handleClick = () =>{
-       this.createOrder()
+       this.props.createOrder(this.props.user.id)
     }
 
 
@@ -60,7 +61,7 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch => {
   return {
-    createOrder: () => dispatch(createOrder())
+    createOrder: (id) => dispatch(createOrder(id))
   }
 }
 
