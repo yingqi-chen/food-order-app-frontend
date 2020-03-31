@@ -3,6 +3,7 @@ import ListDisplayer from '../components/ListDisplayer'
 import OrdersContainer from './OrdersContainer'
 import {connect} from 'react-redux'
 import OrderHeader from '../components/OrderHeader'
+import Button from 'react-bootstrap/Button'
 
 
 class MyProfileContainer extends React.Component{
@@ -25,6 +26,7 @@ class MyProfileContainer extends React.Component{
            <div className="order-block container">
               <OrderHeader item={this.props.currentOrder} dateNeedMoment={false}/>
               <ListDisplayer dishes={this.props.currentOrder.dishes} button = "cancelButton"/>
+              <Button >Submit Order</Button>
            </div> 
         </Fragment>
     }

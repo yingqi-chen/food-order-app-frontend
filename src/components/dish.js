@@ -11,8 +11,9 @@ class Dish extends React.Component{
         alert(`${dish.name} added to your order!`)
       } 
 
-    async handleCancelClick = (dish) =>{
-        await this.props.cancelOrder(dish)
+    handleCancelClick = (dish) =>{
+        this.props.cancelOrder(dish)
+        debugger
         localStorage.setItem("order", JSON.stringify(this.props.order))
         alert(`${dish.name} have been removed from your order!`)
     }

@@ -29,7 +29,8 @@ const orderReducer = ( state = {dishes: [], total: 0, date: date}, action) => {
                 dishes: {
                     ...state.dishes.slice(0,index),
                     ...state.dishes.slice(index+1)
-                }     
+                },
+                total: state.total-dish.price     
             }}else{
                 alert("cannot find that dish!")
                 return state
