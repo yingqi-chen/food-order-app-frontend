@@ -22,18 +22,21 @@ const orderReducer = ( state = initialState, action) => {
         
         case "CANCEL_ORDER":
             let id=action.payload.id
-            let index = state.dishes.findIndex(x=>x.id===1)
+            let index = state.dishes.findIndex(x=>x.id===id)
             
             if(typeof (index)==="number"){
                 let dish = state.dishes[index]
-            return {
-                ...state,
-                dishes: {
-                    ...state.dishes.slice(0,index),
-                    ...state.dishes.slice(index+1)
-                },
-                total: state.total-dish.price     
-            }}else{
+                let newState =  {
+                    ...state,
+                    dishes: [
+                        ...state.dishes.slice(0,index),
+                        ...state.dishes.slice(index+1)
+                    ],
+                    total: state.total-dish.price     
+                }
+                localStorage.setItem("order", JSON.stringify(newState))
+            return newState
+            }else{
                 alert("cannot find that dish!")
                 return state
             }

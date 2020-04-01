@@ -14,7 +14,6 @@ class Dish extends React.Component{
     handleCancelClick = (dish) =>{
         this.props.cancelOrder(dish)
         debugger
-        localStorage.setItem("order", JSON.stringify(this.props.order))
         alert(`${dish.name} have been removed from your order!`)
     }
       
