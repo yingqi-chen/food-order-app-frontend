@@ -5,12 +5,13 @@ import App from './App';
 import {createStore, applyMiddleware,compose} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
-import dishReducer from './reducers/dishReducer.js'
-import userReducer from './reducers/userReducer'
 import {combineReducers} from 'redux'
-import loadingReducer from './reducers/loadingReducer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import orderReducer from './reducers/orderReducer'
+import dishReducer from './reducers/dishReducer.js'
+import userReducer from './reducers/userReducer'
+import loadingReducer from './reducers/loadingReducer';
+
 
 
 const rootReducer = combineReducers({
