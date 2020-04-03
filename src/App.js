@@ -44,7 +44,7 @@ class App extends React.Component {
        </Switch>
       </Router>
       <Footer />
-      <div className="block-block" >blllllock</div>
+      <div className="block-block" > </div>
     </div>
   );
  }
