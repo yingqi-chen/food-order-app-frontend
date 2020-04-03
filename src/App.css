@@ -93,10 +93,13 @@ input.form-control{
 }
 
 .footer{
+  height: 12%;
   background-color: rgb(54, 58, 57);
-  margin-top: 3%;
+  margin-top: 2%;
   color: antiquewhite;
-  position: static;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 2%;
 }
 
 .contact-block{

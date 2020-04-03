@@ -9,7 +9,7 @@ import {createOrder} from '../actions/orderAction'
 
 class MyProfileContainer extends React.Component{
     
-    renderListDisplayer = (lists)=>{
+     renderListDisplayer =  (lists)=>{
   
       return lists.reverse().map((item,index)=>{
          return(

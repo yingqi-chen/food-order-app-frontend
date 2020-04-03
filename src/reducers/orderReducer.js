@@ -22,7 +22,7 @@ const orderReducer = ( state = initialState, action) => {
         
         case "CANCEL_ORDER":
             let id=action.payload.id
-            let index = state.dishes.findIndex(x=>x.id===id)
+            let index = state.dishes.findIndex(x=>x.id===id) 
             
             if(typeof (index)==="number"){
                 let dish = state.dishes[index]
