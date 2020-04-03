@@ -20,8 +20,8 @@ class App extends React.Component {
   }
 
   fetchEverything = () =>{
-    this.props.fetchLoggedInUser()
     this.props.fetchOrder() 
+    this.props.fetchLoggedInUser()
   }
 
   logOut = ()=>{

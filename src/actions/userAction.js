@@ -34,7 +34,6 @@ export function createUser(userinfo){
                alert(data.error)
            }else{
             localStorage.setItem("token", data.jwt)
-            debugger
             dispatch(loginUser(data.user))
            }
         })
@@ -44,6 +43,7 @@ export function fetchLoggedInUser(){
     return dispatch=>{
         const token = localStorage.token
         if (token) {
+          debugger
             return fetch("http://localhost:3001/auto-login", {
               method: "GET",
               headers: {
