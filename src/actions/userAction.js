@@ -34,6 +34,7 @@ export function createUser(userinfo){
                alert(data.error)
            }else{
             localStorage.setItem("token", data.jwt)
+            debugger
             dispatch(loginUser(data.user))
            }
         })

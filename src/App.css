@@ -93,7 +93,7 @@ input.form-control{
 }
 
 .footer{
-  height: 12%;
+  height: 11%;
   background-color: rgb(54, 58, 57);
   margin-top: 2%;
   color: antiquewhite;
@@ -107,8 +107,8 @@ input.form-control{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.contact-block p{
-  margin: 0;
+.contact-block pre{
+   color: antiquewhite;
 }
 
 
