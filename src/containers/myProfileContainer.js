@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import ListDisplayer from '../components/ListDisplayer'
-import OrdersContainer from './OrdersContainer'
+import OrdersContainer from '../components/OrdersContainer'
 import {connect} from 'react-redux'
 import OrderHeader from '../components/OrderHeader'
 import Button from 'react-bootstrap/Button'
@@ -37,6 +37,10 @@ class MyProfileContainer extends React.Component{
        this.props.createOrder(this.props.user.id)
     }
 
+    goHomepage = () =>{
+
+    }
+
 
     render(){
         let user = this.props.user
@@ -45,7 +49,14 @@ class MyProfileContainer extends React.Component{
        <div className = "container">
          <h1>Hello, {user.name}!</h1>
          {this.renderCurrentOrder()}
-         {user.orders? <OrdersContainer orders={this.props.orders} renderListDisplayer={this.renderListDisplayer} total={this.calculateTotal}/> : <h3>You have no orders.</h3>}  
+         {user.orders.dishes===0? <OrdersContainer orders={this.props.orders} renderListDisplayer={this.renderListDisplayer} total={this.calculateTotal}/> 
+         : 
+         <Fragment>
+         <h3>You have no orders.</h3>
+         <Button ><a href="/">Go order some food!</a></Button>
+         </Fragment>
+         } 
+         
        </div>
    )
 }

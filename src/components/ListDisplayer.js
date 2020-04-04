@@ -4,20 +4,13 @@ import {Row} from 'react-bootstrap'
 
 
 
-class ListDisplayer extends React.Component{
-    render(){
+const ListDisplayer = ({dishes,button})=>{
 
-      if(this.props.dishes.length!==0){
-        return(    
+     return dishes.length!==0 ?   
             <Row sm={1} md={2} lg={3}>
-              {this.props.dishes.map((d,index) => <Dish key={index} dish={d} button={this.props.button} />)}
+              {dishes.map((d,index) => <Dish key={index} dish={d} button={button} />)}
             </Row>
-        )
-        }else{
-          return null
-        }
-      }     
-  
+            : null
 }
 
     

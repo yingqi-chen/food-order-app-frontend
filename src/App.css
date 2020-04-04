@@ -37,6 +37,12 @@
   }
 }
 
+.btn-primary a{
+  color: black;
+  font-weight: 700;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .jumbotron{
   background-image: url("https://anthemtoday.com/wp-content/uploads/hm_bbpui/4386/ko6n4qn3fd4y7mvu2tq671v2pgrvmgox.jpg");
   background-image: repeat-x fixed bottom;
@@ -103,7 +109,8 @@ input.form-control{
 }
 
 .block-block{
-  min-height: 100px;
+  min-height: 150px;
+  content: " ";
 }
 
 .contact-block{
