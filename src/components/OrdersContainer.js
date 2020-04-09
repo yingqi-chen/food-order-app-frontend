@@ -1,6 +1,6 @@
 import React from 'react'
 
-const OrderContainer = ({orders,renderListDisplayer,total}) => {
+const OrdersContainer = ({orders,renderListDisplayer,total}) => {
     return (
       <div className="container">
          <h3>My order history</h3>
@@ -11,4 +11,4 @@ const OrderContainer = ({orders,renderListDisplayer,total}) => {
 
 
 
-export default OrderContainer
+export default OrdersContainer

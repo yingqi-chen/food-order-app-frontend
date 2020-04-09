@@ -13,7 +13,6 @@ class Dish extends React.Component{
 
     handleCancelClick = (dish) =>{
         this.props.cancelOrder(dish)
-        debugger
         alert(`${dish.name} have been removed from your order!`)
     }
       

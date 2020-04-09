@@ -49,7 +49,7 @@ class MyProfileContainer extends React.Component{
        <div className = "container">
          <h1>Hello, {user.name}!</h1>
          {this.renderCurrentOrder()}
-         {user.orders.dishes===0? <OrdersContainer orders={this.props.orders} renderListDisplayer={this.renderListDisplayer} total={this.calculateTotal}/> 
+         {user.orders.dishes !==0? <OrdersContainer orders={this.props.orders} renderListDisplayer={this.renderListDisplayer} total={this.calculateTotal}/> 
          : 
          <Fragment>
          <h3>You have no orders.</h3>
