@@ -2,7 +2,7 @@ import React from 'react'
 import LoginForm from '../components/loginForm'
 import MyProfileContainer from '../containers/myProfileContainer'
 import {connect} from 'react-redux'
-import Signup from '../components/Signup'
+import Signup from './Signup'
 
 
 
