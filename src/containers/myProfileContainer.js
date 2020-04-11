@@ -45,16 +45,20 @@ class MyProfileContainer extends React.Component{
     render(){
         let user = this.props.user
         debugger
+        let currentDishes = this.props.currentOrder.dishes
     return (
        <div className = "container">
          <h1>Hello, {user.name}!</h1>
-         {this.renderCurrentOrder()}
-         {user.orders.length !==0? <OrdersContainer orders={this.props.orders} renderListDisplayer={this.renderListDisplayer} total={this.calculateTotal}/> 
+         {currentDishes.length !==0 ? this.renderCurrentOrder()
          : 
          <Fragment>
-         <h3>You have no orders.</h3>
+         <h3>You currently have no orders.</h3>
          <Button ><a href="/">Go order some food!</a></Button>
          </Fragment>
+         }
+         {this.props.orders !==0? <OrdersContainer orders={this.props.orders} renderListDisplayer={this.renderListDisplayer} total={this.calculateTotal}/> 
+         : null
+         
          } 
          
        </div>
