@@ -96,11 +96,18 @@ input.form-control{
 .order-block{
   background-color: tan;
   margin: 2%;
+  height: 300px;
 }
+
+.order-block img{
+  margin: brown;
+}
+
 
 .order-header{
   padding: 1%;
 }
+
 
 .order-block button{
   margin-bottom: 2%;
