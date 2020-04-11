@@ -22,7 +22,7 @@ class MyProfileContainer extends React.Component{
 
     renderCurrentOrder = () =>{
       return (
-      <div className = "current_order">
+      <div id = "current-order">
       {this.props.currentOrder.dishes.length===0? 
       <Fragment>
          <h3>You currently have no orders.</h3>
