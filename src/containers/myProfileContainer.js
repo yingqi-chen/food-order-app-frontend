@@ -21,45 +21,40 @@ class MyProfileContainer extends React.Component{
     }
 
     renderCurrentOrder = () =>{
-      return this.props.currentOrder.dishes.length===0? 
-      null 
-      : <Fragment>
+      return (
+      <div className = "current_order">
+      {this.props.currentOrder.dishes.length===0? 
+      <Fragment>
+         <h3>You currently have no orders.</h3>
+         <Button ><a href="/">Go order some food!</a></Button>
+      </Fragment>
+      : 
+      <Fragment >
            <h3>My Current Order</h3>
            <div className="order-block container">
               <OrderHeader item={this.props.currentOrder} dateNeedMoment={false}/>
               <ListDisplayer dishes={this.props.currentOrder.dishes} button = "cancelButton"/>
               <Button onClick={this.handleClick}>Submit Order</Button>
            </div> 
-        </Fragment>
+        </Fragment>}
+      </div>
+      )
     }
 
     handleClick = () =>{
        this.props.createOrder(this.props.user.id)
     }
 
-    goHomepage = () =>{
-
-    }
-
-
     render(){
         let user = this.props.user
-        debugger
-        let currentDishes = this.props.currentOrder.dishes
     return (
        <div className = "container">
          <h1>Hello, {user.name}!</h1>
-         {currentDishes.length !==0 ? this.renderCurrentOrder()
-         : 
-         <Fragment>
-         <h3>You currently have no orders.</h3>
-         <Button ><a href="/">Go order some food!</a></Button>
-         </Fragment>
-         }
-         {this.props.orders !==0? <OrdersContainer orders={this.props.orders} renderListDisplayer={this.renderListDisplayer} total={this.calculateTotal}/> 
+         {this.renderCurrentOrder()}
+         {this.props.orders !==0? 
+         <OrdersContainer orders={this.props.orders} renderListDisplayer={this.renderListDisplayer} total={this.calculateTotal}/> 
          : null
-         
-         } 
+         }
          
        </div>
    )
