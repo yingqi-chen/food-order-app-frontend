@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import RestaurantContainer from './containers/restaurantContainer';
 import UserContainer from './containers/userContainer.js'
 import {connect} from 'react-redux'
-import {fetchLoggedInUser} from './actions/userAction'
+import {fetchLoggedInUser} from './thunks/fetchUser'
 import Header from './components/Header'
 import './App.css'
 import MyLoggedInNavBar from './components/MyLoggedInNavBar'

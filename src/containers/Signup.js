@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {createUser} from '../actions/userAction'
+import {createUser} from '../thunks/fetchUser'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
