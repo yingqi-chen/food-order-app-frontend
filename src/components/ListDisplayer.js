@@ -1,5 +1,5 @@
 import React from 'react'
-import Dish from '../components/dish'
+import Dish from '../containers/dish'
 import {Row} from 'react-bootstrap'
 
 

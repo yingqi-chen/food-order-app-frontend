@@ -1,5 +1,5 @@
 import React from 'react'
-import LoginForm from '../components/loginForm'
+import LoginForm from './loginForm'
 import MyProfileContainer from '../containers/myProfileContainer'
 import {connect} from 'react-redux'
 import Signup from './Signup'
