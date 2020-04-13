@@ -5,8 +5,8 @@ import {connect} from 'react-redux'
 
 class Dish extends React.Component{
 
-    handleOrderClick = (dish) =>{
-        this.props.addOrder(dish)
+    handleOrderClick = async (dish) =>{
+        await this.props.addOrder(dish)
         localStorage.setItem("order", JSON.stringify(this.props.order))
         alert(`${dish.name} added to your order!`)
       } 
