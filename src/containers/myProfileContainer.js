@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import OrderHeader from '../components/OrderHeader'
 import Button from 'react-bootstrap/Button'
 import {createOrder} from '../thunks/fetchOrder'
+import {Link} from 'react-router-dom'
 
 
 class MyProfileContainer extends React.Component{
@@ -26,7 +27,7 @@ class MyProfileContainer extends React.Component{
       {this.props.currentOrder.dishes.length===0? 
       <Fragment>
          <h3>You currently have no orders.</h3>
-         <Button ><a href="/">Go order some food!</a></Button>
+         <Button ><Link to="/">Go order some food!</Link></Button>
       </Fragment>
       : 
       <Fragment >
