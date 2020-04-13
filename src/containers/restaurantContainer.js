@@ -8,8 +8,9 @@ import ListDisplayer from '../components/ListDisplayer'
 class RestaurantContainer extends React.Component {
 
     componentDidMount(){
+      if(this.props.dishes.length ==0){
         this.props.fetchDishes()
-    }
+    }}
   
     render(){
     return (
