@@ -14,15 +14,7 @@ import Footer from './components/Footer'
 import {fetchOrder} from './actions/orderAction'
 
 class App extends React.Component {
-   
-  componentDidMount(){
-    this.fetchEverything()   
-  }
 
-  fetchEverything = () =>{
-    this.props.fetchOrder() 
-    this.props.fetchLoggedInUser()
-  }
 
   logOut = ()=>{
     localStorage.removeItem("token")
@@ -61,9 +53,7 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch =>{
   return{
-    fetchLoggedInUser: () => dispatch(fetchLoggedInUser()),
     logOutUser: ()=>dispatch(logOutUser()),
-    fetchOrder: ()=>dispatch(fetchOrder())
   }
 }
 
