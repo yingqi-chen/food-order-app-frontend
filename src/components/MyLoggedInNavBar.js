@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/Button'
+import {Link} from 'react-router-dom'
 
 
 
@@ -10,9 +11,9 @@ export const MyLoggedInNavBar = ({logOut}) =>{
     return(
       <Navbar bg={"dark"}>
         <div className="container">
-           <Nav>
-           <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/">Home</Nav.Link>
-           <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/myprofile">My orders</Nav.Link>
+           <Nav> 
+           <Nav.Link as={Link}   style={{color: "azure"}} to="/">Home</Nav.Link> 
+           <Nav.Link as={Link} style={{color: "azure"}} to="/myprofile">My orders</Nav.Link>
            <Button size="sm" onClick = {logOut}>Log Out</Button>
            </Nav>
         </div>

@@ -33,9 +33,9 @@ class App extends React.Component {
   render(){
   return (
     <div>
+      <Router>
       {this.props.login? <MyLoggedInNavBar logOut = {this.logOut}/> : <MyNotLoggedInNavBar />}
       <Header />
-      <Router>
        <Switch>
          <Route exact path="/" component={RestaurantContainer} />
          <Route exact path="/login" component={UserContainer} />

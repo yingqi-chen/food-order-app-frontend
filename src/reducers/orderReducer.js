@@ -10,10 +10,12 @@ const orderReducer = ( state = initialState, action) => {
       
 
         case "ADD_ORDER":
-            state.dishes.push(action.payload)
             return{
                 ...state,
-                dishes: state.dishes,
+                dishes: [
+                    ...state.dishes,
+                    action.payload
+                ],
                 total: state.total + action.payload.price
             }
 
