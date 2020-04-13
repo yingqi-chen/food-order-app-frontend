@@ -14,7 +14,15 @@ import Footer from './components/Footer'
 import {fetchOrder} from './actions/orderAction'
 
 class App extends React.Component {
+   
+  componentDidMount(){
+    this.fetchEverything()   
+  }
 
+  fetchEverything = () =>{
+    this.props.fetchOrder() 
+    this.props.fetchLoggedInUser()
+  }
 
   logOut = ()=>{
     localStorage.removeItem("token")
@@ -28,6 +36,7 @@ class App extends React.Component {
       <Router>
       {this.props.login? <MyLoggedInNavBar logOut = {this.logOut}/> : <MyNotLoggedInNavBar />}
       <Header />
+
        <Switch>
          <Route exact path="/" component={RestaurantContainer} />
          <Route exact path="/login" component={UserContainer} />
@@ -53,7 +62,9 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch =>{
   return{
+    fetchLoggedInUser: () => dispatch(fetchLoggedInUser()),
     logOutUser: ()=>dispatch(logOutUser()),
+    fetchOrder: ()=>dispatch(fetchOrder())
   }
 }
 
