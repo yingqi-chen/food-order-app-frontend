@@ -7,6 +7,11 @@ class Dish extends React.Component{
 
     handleOrderClick = async (dish) =>{
         await this.props.addOrder(dish)
+        this.handleLocalStorage(dish)
+        alert(`${dish.name} added to your order!`)
+      } 
+
+    handleLocalStorage = (dish) =>{
         let order = localStorage.order
         if (order !=="undefined"){
             debugger
@@ -17,9 +22,7 @@ class Dish extends React.Component{
             debugger
             localStorage.setItem("order", JSON.stringify(this.props.order))
         }
-        
-        alert(`${dish.name} added to your order!`)
-      } 
+    }
 
     handleCancelClick = (dish) =>{
         this.props.cancelOrder(dish)

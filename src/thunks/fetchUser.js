@@ -13,7 +13,6 @@ export function loginUserFetch(userInfo){
             if(data.error){
                 alert(data.error)
             }else{
-              debugger
              let user_json = JSON.parse(data.user) 
              localStorage.setItem("token", data.jwt)
              dispatch(loginUser(user_json))
