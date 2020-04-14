@@ -2,40 +2,46 @@ import moment from 'moment'
 
 const date = moment().calendar()
 
-let initialState = {dishes: [], total: 0, date: date}
+let initialState = {current_order: {dishes: [], total: 0, date: date}, order_history: []}
 
 const orderReducer = ( state = initialState, action) => {
+   let dishes = state.current_order.dishes
+   let total = state.current_order.total
+   let current_order = state.current_order
    
     switch(action.type){
       
-
         case "ADD_ORDER":
             return{
                 ...state,
-                dishes: [
-                    ...state.dishes,
+                current_order: {
+                    ...current_order,
+                    dishes: [
+                    ...dishes,
                     action.payload
                 ],
-                total: state.total + action.payload.price
-            }
+                total: total + action.payload.price
+            }}
 
         case "CLEAR_ORDER":
-            return initialState;
+            return initialState
         
         case "CANCEL_ORDER":
             let id=action.payload.id
-            let index = state.dishes.findIndex(x=>x.id===id) 
+            let index = dishes.findIndex(x=>x.id===id) 
             
             if(typeof (index)==="number"){
-                let dish = state.dishes[index]
+                let dish = dishes[index]
                 let newState =  {
                     ...state,
-                    dishes: [
-                        ...state.dishes.slice(0,index),
-                        ...state.dishes.slice(index+1)
+                    current_order: {
+                        ...current_order,
+                        dishes: [
+                        ...dishes.slice(0,index),
+                        ...dishes.slice(index+1)
                     ],
-                    total: state.total-dish.price     
-                }
+                        total: total-dish.price     
+                }}
                 localStorage.setItem("order", JSON.stringify(newState))
             return newState
             }else{
@@ -44,17 +50,19 @@ const orderReducer = ( state = initialState, action) => {
             }
 
         case "FETCH_ORDER":
-
+                
                 let order_json = action.payload
                 let sum = 0
                 if (action.payload){
                 order_json.dishes.forEach((x)=>sum+=x.price)
                 return {
                     ...state,
+                    current_order: {
+                        ...current_order,
                         date: order_json.date,
                         dishes: order_json.dishes,
                         total: sum
-            }}else{
+            }}}else{
                 return state
             }
         

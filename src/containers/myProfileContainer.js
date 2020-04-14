@@ -67,7 +67,7 @@ class MyProfileContainer extends React.Component{
 const mapStateToProps = state =>{
   return {
       orders: state.user.user.orders,
-      currentOrder: state.order 
+      currentOrder: state.order.current_order 
   }
 }
 
