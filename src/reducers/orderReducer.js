@@ -57,13 +57,13 @@ const orderReducer = ( state = initialState, action) => {
                 let sum = 0
                 debugger
                 if (action.payload){
-                order_json.current_order.dishes.forEach((x)=>sum+=x.price)
+                order_json.dishes.forEach((x)=>sum+=x.price)
                 return {
                     ...state,
                     current_order: {
                         ...current_order,
-                        date: order_json.current_order.date,
-                        dishes: order_json.current_order.dishes,
+                        date: order_json.date,
+                        dishes: order_json.dishes,
                         total: sum
             }}}else{
                 return state

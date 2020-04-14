@@ -13,7 +13,6 @@ class Dish extends React.Component{
 
     handleLocalStorage = (dish) =>{
         let order = localStorage.order
-        debugger
         if (order){
             let order_json = JSON.parse(order)
             order_json.dishes.push(dish)

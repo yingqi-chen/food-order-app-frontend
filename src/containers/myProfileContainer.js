@@ -4,7 +4,7 @@ import OrdersContainer from '../components/OrdersContainer'
 import {connect} from 'react-redux'
 import OrderHeader from '../components/OrderHeader'
 import Button from 'react-bootstrap/Button'
-import {createOrder} from '../thunks/fetchOrder'
+import {createOrder} from '../thunks/createOrder'
 import {Link} from 'react-router-dom'
 
 
