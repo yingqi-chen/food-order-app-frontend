@@ -12,7 +12,6 @@ const orderReducer = ( state = initialState, action) => {
     switch(action.type){
     
         case "ADD_ORDER":
-            debugger
             return {
                 ...state,
                 current_order: {

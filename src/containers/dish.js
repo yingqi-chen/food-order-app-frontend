@@ -13,13 +13,13 @@ class Dish extends React.Component{
 
     handleLocalStorage = (dish) =>{
         let order = localStorage.order
-        if (order !=="undefined"){
-            debugger
+        debugger
+        if (order){
             let order_json = JSON.parse(order)
             order_json.dishes.push(dish)
+            order_json.total +=dish.price
             localStorage.setItem("order", JSON.stringify(order_json))
         }else{
-            debugger
             localStorage.setItem("order", JSON.stringify(this.props.order))
         }
     }
