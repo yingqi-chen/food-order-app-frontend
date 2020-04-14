@@ -25,8 +25,15 @@ const orderReducer = ( state = initialState, action) => {
                 }
             }
 
-        case "CLEAR_ORDER":
-            return initialState
+        case "CREATE_ORDER":
+            return {
+                ...state,
+                current_order: initialState.current_order,
+                order_history: [
+                    ...state.order_history,
+                    action.payload
+                ]
+            }
         
         case "CANCEL_ORDER":
             let id=action.payload.id
@@ -69,7 +76,6 @@ const orderReducer = ( state = initialState, action) => {
             }
             
         case "LOGIN_USER":
-            debugger
             return{
               ...state,
               order_history: action.payload.orders

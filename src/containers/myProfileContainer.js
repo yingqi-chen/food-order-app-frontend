@@ -9,9 +9,13 @@ import {Link} from 'react-router-dom'
 
 
 class MyProfileContainer extends React.Component{
+
+    state = {
+      submitted: false
+    }
     
      renderListDisplayer =  (lists)=>{
-  
+         
       return lists.reverse().map((item,index)=>{
          return(
         <div className="order-block container">
@@ -24,26 +28,35 @@ class MyProfileContainer extends React.Component{
     renderCurrentOrder = () =>{
       return (
       <div id = "current-order">
-      {this.props.currentOrder.dishes.length===0? 
-      <Fragment>
-         <h3>You currently have no orders.</h3>
-         <Button ><Link to="/">Go order some food!</Link></Button>
-      </Fragment>
-      : 
-      <Fragment >
-           <h3>My Current Order</h3>
-           <div className="order-block container">
-              <OrderHeader item={this.props.currentOrder} dateNeedMoment={false}/>
-              <ListDisplayer dishes={this.props.currentOrder.dishes} button = "cancelButton"/>
-              <Button onClick={this.handleClick}>Submit Order</Button>
-           </div> 
-        </Fragment>}
+        {this.state.submitted?
+        <h3>Thanks for your order!</h3> : this.renderWhenSubmittedIsFalse()}
       </div>
       )
     }
+    
 
-    handleClick = () =>{
-       this.props.createOrder(this.props.user.id)
+    renderWhenSubmittedIsFalse = () => {
+       return this.props.currentOrder.dishes.length===0? 
+        <Fragment>
+           <h3>You currently have no orders.</h3>
+           <Button ><Link to="/">Go order some food!</Link></Button>
+        </Fragment>
+        : 
+        <Fragment >
+             <h3>My Current Order</h3>
+             <div className="order-block container">
+                <OrderHeader item={this.props.currentOrder} dateNeedMoment={false}/>
+                <ListDisplayer dishes={this.props.currentOrder.dishes} button = "cancelButton"/>
+                <Button onClick={this.handleClick}>Submit Order</Button>
+             </div> 
+          </Fragment>
+    }
+
+    handleClick = async () =>{
+      await this.props.createOrder(this.props.user.id)
+      this.setState({
+        submitted: true
+      }, ()=>this.renderCurrentOrder())     
     }
 
     render(){
