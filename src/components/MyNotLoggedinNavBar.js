@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+import {Link} from 'react-router-dom'
 
 
 
@@ -10,9 +11,9 @@ export const MyNotLoggedInNavBar = () =>{
       <Navbar bg={"dark"}>
         <div className="container">
            <Nav>
-           <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/">Home</Nav.Link>
-           <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/signup">Sign up</Nav.Link>
-           <Nav.Link  style={{color: "azure"}} href="http://localhost:3000/login">Log in</Nav.Link>
+           <Nav.Link as={Link}  style={{color: "azure"}} to="/">Home</Nav.Link>
+           <Nav.Link as={Link}  style={{color: "azure"}} to="/signup">Sign up</Nav.Link>
+           <Nav.Link as={Link}  style={{color: "azure"}} to="/login">Log in</Nav.Link>
            </Nav>
         </div>
     </Navbar>
