@@ -7,7 +7,17 @@ class Dish extends React.Component{
 
     handleOrderClick = async (dish) =>{
         await this.props.addOrder(dish)
-        localStorage.setItem("order", JSON.stringify(this.props.order))
+        let order = localStorage.order
+        if (order !=="undefined"){
+            debugger
+            let order_json = JSON.parse(order)
+            order_json.dishes.push(dish)
+            localStorage.setItem("order", JSON.stringify(order_json))
+        }else{
+            debugger
+            localStorage.setItem("order", JSON.stringify(this.props.order))
+        }
+        
         alert(`${dish.name} added to your order!`)
       } 
 
@@ -53,7 +63,7 @@ const mapDispatchToProps = dispatch =>{
 
 const mapStateToProps = state =>{
     return{
-        order: state.order
+        order: state.order.current_order
     }
 }
 

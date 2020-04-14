@@ -10,18 +10,21 @@ const orderReducer = ( state = initialState, action) => {
    let current_order = state.current_order
    
     switch(action.type){
-      
+    
         case "ADD_ORDER":
-            return{
+            debugger
+            return {
                 ...state,
                 current_order: {
                     ...current_order,
                     dishes: [
-                    ...dishes,
-                    action.payload
-                ],
-                total: total + action.payload.price
-            }}
+                        ...dishes,
+                        action.payload
+                    ],
+                    total: total+action.payload.price,
+                    date: date
+                }
+            }
 
         case "CLEAR_ORDER":
             return initialState
@@ -53,14 +56,15 @@ const orderReducer = ( state = initialState, action) => {
                 
                 let order_json = action.payload
                 let sum = 0
+                debugger
                 if (action.payload){
-                order_json.dishes.forEach((x)=>sum+=x.price)
+                order_json.current_order.dishes.forEach((x)=>sum+=x.price)
                 return {
                     ...state,
                     current_order: {
                         ...current_order,
-                        date: order_json.date,
-                        dishes: order_json.dishes,
+                        date: order_json.current_order.date,
+                        dishes: order_json.current_order.dishes,
                         total: sum
             }}}else{
                 return state
