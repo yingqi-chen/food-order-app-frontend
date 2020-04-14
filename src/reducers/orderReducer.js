@@ -55,7 +55,6 @@ const orderReducer = ( state = initialState, action) => {
                 
                 let order_json = action.payload
                 let sum = 0
-                debugger
                 if (action.payload){
                 order_json.dishes.forEach((x)=>sum+=x.price)
                 return {
@@ -67,6 +66,13 @@ const orderReducer = ( state = initialState, action) => {
                         total: sum
             }}}else{
                 return state
+            }
+            
+        case "LOGIN_USER":
+            debugger
+            return{
+              ...state,
+              order_history: action.payload.orders
             }
         
   
