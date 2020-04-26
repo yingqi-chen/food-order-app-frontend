@@ -15,8 +15,8 @@ class Dish extends React.Component{
         let order = localStorage.order
         if (order){
             let order_json = JSON.parse(order)
-            order_json.dishes.push(dish)
-            order_json.total +=dish.price
+            order_json.current_order.dishes.push(dish)
+            order_json.current_order.total +=dish.price
             localStorage.setItem("order", JSON.stringify(order_json))
         }else{
             localStorage.setItem("order", JSON.stringify(this.props.order))

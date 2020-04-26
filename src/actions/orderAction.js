@@ -7,7 +7,7 @@ export function addOrder(dish){
  export function fetchOrder(){
     return{
       type: "FETCH_ORDER",
-      payload: JSON.parse(localStorage.getItem("order"))
+      payload: localStorage.getItem("order")
     }
  }
 
