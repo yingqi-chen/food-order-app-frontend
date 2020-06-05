@@ -1,7 +1,8 @@
 import {loginUser} from '../actions/userAction'
+import BASE from '../base_url'
 
 export function loginUserFetch(userInfo){
-    return dispatch=>fetch('http://localhost:3001/login', {
+    return dispatch=>fetch(`${BASE}/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -24,7 +25,7 @@ export function loginUserFetch(userInfo){
 
 
 export function createUser(userinfo){
-    return dispatch=>fetch('http://localhost:3001/signup', {
+    return dispatch=>fetch(`${BASE}/signup`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -46,7 +47,7 @@ export function fetchLoggedInUser(){
     return dispatch=>{
         const token = localStorage.token
         if (token) {
-            return fetch("http://localhost:3001/auto-login", {
+            return fetch(`${BASE}/auto-login`, {
               method: "GET",
               headers: {
                 'Content-Type': 'application/json',

@@ -1,7 +1,9 @@
+import BASE from '../base_url'
+
 export function createOrder(id){
     let order =JSON.parse(localStorage.getItem("order"))
     return dispatch =>{
-      fetch(`http://localhost:3001/users/${id}/orders`, {
+      fetch(`${BASE}/users/${id}/orders`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
