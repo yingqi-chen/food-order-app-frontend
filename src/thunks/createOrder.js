@@ -1,7 +1,8 @@
 import BASE from '../base_url'
 
 export function createOrder(id){
-    let order =JSON.parse(localStorage.getItem("order"))
+    let order =JSON.parse(localStorage.getItem("order")).current_order
+    debugger
     return dispatch =>{
       fetch(`${BASE}/users/${id}/orders`, {
             method: "POST",
