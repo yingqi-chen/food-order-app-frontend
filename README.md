@@ -4,7 +4,9 @@
 
 This is a mock e-commerce site that allows people to order food online.  It is a combination of a react-based frontend and a rails API backend. 
 You can sign up, log in, go to the `Homepage` to order food and go to `My orders` page to check out your order histories and submit your current order. 
+
 The website is here: https://newchinacafe-ae234.web.app/
+
 The backend is here: https://github.com/chanwkkk/food-order-app-backend 
 
 ## Installation
