@@ -1,4 +1,4 @@
-# food-order-app
+# food-order-app-frontend
 
 ## Introduction
 
