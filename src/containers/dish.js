@@ -2,6 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 import {addOrder, cancelOrder} from '../actions/orderAction'
 import {connect} from 'react-redux'
+import {Col} from 'react-bootstrap'
 
 class Dish extends React.Component{
 
@@ -42,7 +43,7 @@ class Dish extends React.Component{
     render(){
       let dish = this.props.dish  
         return(
-        <div className="col-4">  
+        <Col sm={12} md={6} xl={4}>  
             <img
             width = "100%" 
             height = "70%"
@@ -51,7 +52,7 @@ class Dish extends React.Component{
             alt={dish.name} />
             <h5>{dish.name}         ${dish.price}</h5>
             {this.renderButton(dish)}
-        </div>
+        </Col>
     )
   }
 }
