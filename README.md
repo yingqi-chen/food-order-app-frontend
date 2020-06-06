@@ -7,7 +7,9 @@ You can sign up, log in, go to the `Homepage` to order food and go to `My orders
 
 The website is here: https://newchinacafe-ae234.web.app/
 
-The backend is here: https://github.com/chanwkkk/food-order-app-backend 
+This backend is deployed here: https://powerful-oasis-63354.herokuapp.com/
+
+The backend code is here: https://github.com/chanwkkk/food-order-app-backend 
 
 ## Installation
 
