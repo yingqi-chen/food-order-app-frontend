@@ -1,7 +1,6 @@
 import React from 'react'
 import Dish from '../containers/dish'
 import {Row} from 'react-bootstrap'
-import {Col} from 'react-bootstrap'
 
 
 
