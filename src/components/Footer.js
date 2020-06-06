@@ -5,7 +5,8 @@ const Footer = () =>{
       <div className="container-fluid footer">
           <div className="container contact-block">
              <h3> Contact </h3>
-             <pre>Telephone:  (303) 733-2833       Address: 609 E Alameda Ave, Denver, CO 80209</pre>         
+             <p>Telephone:  (303) 733-2833</p>
+             <p>Address: 609 E Alameda Ave, Denver, CO 80209 </p>         
           </div>            
 
       </div>  
