@@ -8,7 +8,6 @@ const Footer = () =>{
              <p>Telephone:  (303) 733-2833</p>
              <p>Address: 609 E Alameda Ave, Denver, CO 80209 </p>         
           </div>            
-
       </div>  
     )
 }
