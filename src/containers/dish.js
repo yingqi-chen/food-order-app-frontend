@@ -32,9 +32,9 @@ class Dish extends React.Component{
     renderButton = (dish) =>{
         let button = this.props.button
         if (button==="orderButton"){
-            return <Button onClick = {()=>this.handleOrderClick(dish)} size="sm" variant="primary">Order</Button>   
+            return <Button onClick = {()=>this.handleOrderClick(dish)} size="md" variant="primary">Order</Button>   
         }else if (button==="cancelButton"){
-            return <Button onClick = {()=>this.handleCancelClick(dish)} size="sm" variant="secondary">Cancel</Button> 
+            return <Button onClick = {()=>this.handleCancelClick(dish)} size="md" variant="secondary">Cancel</Button> 
         }else{
             return null
         }
