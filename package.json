@@ -16,7 +16,7 @@
     "react-scripts": "3.4.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "minimist": "^1.2.3"
+    "minimist": "^1.2.6"
   },
   "scripts": {
     "start": "react-scripts start",
